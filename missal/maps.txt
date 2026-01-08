@@ -1,0 +1,544 @@
+namespace missalpolice
+{
+    partial class FrmMaps
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMaps));
+            btnclose = new System.Windows.Forms.Button();
+            btnsave = new System.Windows.Forms.Button();
+            btnMapPrint = new System.Windows.Forms.Button();
+            btnupdate = new System.Windows.Forms.Button();
+            contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(components);
+            lbldistrict = new System.Windows.Forms.Label();
+            lblps = new System.Windows.Forms.Label();
+            lblfirno = new System.Windows.Forms.Label();
+            firno = new System.Windows.Forms.TextBox();
+            ps = new System.Windows.Forms.TextBox();
+            map_combo = new System.Windows.Forms.ComboBox();
+            lblfirdate = new System.Windows.Forms.Label();
+            lbloffence = new System.Windows.Forms.Label();
+            lblmudai = new System.Windows.Forms.Label();
+            lblaccname = new System.Windows.Forms.Label();
+            firdate = new System.Windows.Forms.TextBox();
+            offence = new System.Windows.Forms.TextBox();
+            mudai = new System.Windows.Forms.TextBox();
+            txtdistrict = new System.Windows.Forms.TextBox();
+            accname = new System.Windows.Forms.RichTextBox();
+            acccnic = new System.Windows.Forms.RichTextBox();
+            panelmap = new System.Windows.Forms.Panel();
+            mapbox = new System.Windows.Forms.PictureBox();
+            head = new System.Windows.Forms.RichTextBox();
+            mapdate = new System.Windows.Forms.TextBox();
+            picnews = new System.Windows.Forms.PictureBox();
+            body = new System.Windows.Forms.RichTextBox();
+            iofficer = new System.Windows.Forms.TextBox();
+            mapPaperSizeCombo = new System.Windows.Forms.ComboBox();
+            btnMapPrintPreview = new System.Windows.Forms.Button();
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
+            printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            btnReplace = new System.Windows.Forms.Button();
+            panelmap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)mapbox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picnews).BeginInit();
+            SuspendLayout();
+            // 
+            // btnclose
+            // 
+            btnclose.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            btnclose.BackColor = System.Drawing.Color.White;
+            btnclose.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnclose.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnclose.Location = new System.Drawing.Point(640, 312);
+            btnclose.Name = "btnclose";
+            btnclose.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            btnclose.Size = new System.Drawing.Size(50, 50);
+            btnclose.TabIndex = 6;
+            btnclose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnclose.UseVisualStyleBackColor = false;
+            // 
+            // btnsave
+            // 
+            btnsave.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            btnsave.BackColor = System.Drawing.Color.White;
+            btnsave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnsave.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnsave.Location = new System.Drawing.Point(640, 168);
+            btnsave.Name = "btnsave";
+            btnsave.Size = new System.Drawing.Size(50, 50);
+            btnsave.TabIndex = 5;
+            btnsave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnsave.UseVisualStyleBackColor = false;
+            // 
+            // btnMapPrint
+            // 
+            btnMapPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            btnMapPrint.BackColor = System.Drawing.Color.White;
+            btnMapPrint.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            btnMapPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnMapPrint.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnMapPrint.Location = new System.Drawing.Point(640, 240);
+            btnMapPrint.Name = "btnMapPrint";
+            btnMapPrint.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            btnMapPrint.Size = new System.Drawing.Size(50, 50);
+            btnMapPrint.TabIndex = 43;
+            btnMapPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnMapPrint.UseVisualStyleBackColor = false;
+            // 
+            // btnupdate
+            // 
+            btnupdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            btnupdate.BackColor = System.Drawing.Color.White;
+            btnupdate.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnupdate.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnupdate.Location = new System.Drawing.Point(640, 171);
+            btnupdate.Name = "btnupdate";
+            btnupdate.Size = new System.Drawing.Size(50, 50);
+            btnupdate.TabIndex = 42;
+            btnupdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnupdate.UseVisualStyleBackColor = false;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // lbldistrict
+            // 
+            lbldistrict.AutoSize = true;
+            lbldistrict.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbldistrict.Location = new System.Drawing.Point(78, 11);
+            lbldistrict.Name = "lbldistrict";
+            lbldistrict.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            lbldistrict.Size = new System.Drawing.Size(37, 32);
+            lbldistrict.TabIndex = 1;
+            lbldistrict.Text = "ضلع:";
+            // 
+            // lblps
+            // 
+            lblps.AutoSize = true;
+            lblps.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblps.Location = new System.Drawing.Point(504, 11);
+            lblps.Name = "lblps";
+            lblps.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            lblps.Size = new System.Drawing.Size(39, 32);
+            lblps.TabIndex = 0;
+            lblps.Text = "تھانہ:";
+            // 
+            // lblfirno
+            // 
+            lblfirno.AutoSize = true;
+            lblfirno.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblfirno.Location = new System.Drawing.Point(488, 88);
+            lblfirno.Name = "lblfirno";
+            lblfirno.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            lblfirno.Size = new System.Drawing.Size(65, 32);
+            lblfirno.TabIndex = 2;
+            lblfirno.Text = "مقدمہ نمبر:";
+            // 
+            // firno
+            // 
+            firno.BackColor = System.Drawing.Color.White;
+            firno.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            firno.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            firno.Location = new System.Drawing.Point(400, 88);
+            firno.Name = "firno";
+            firno.ReadOnly = true;
+            firno.Size = new System.Drawing.Size(81, 33);
+            firno.TabIndex = 4;
+            // 
+            // ps
+            // 
+            ps.BackColor = System.Drawing.Color.White;
+            ps.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            ps.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ps.Location = new System.Drawing.Point(407, 11);
+            ps.Name = "ps";
+            ps.ReadOnly = true;
+            ps.Size = new System.Drawing.Size(98, 33);
+            ps.TabIndex = 5;
+            // 
+            // map_combo
+            // 
+            map_combo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            map_combo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            map_combo.DropDownHeight = 600;
+            map_combo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            map_combo.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            map_combo.FormattingEnabled = true;
+            map_combo.IntegralHeight = false;
+            map_combo.Location = new System.Drawing.Point(184, 8);
+            map_combo.Name = "map_combo";
+            map_combo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            map_combo.Size = new System.Drawing.Size(200, 40);
+            map_combo.TabIndex = 1;
+            // 
+            // lblfirdate
+            // 
+            lblfirdate.AutoSize = true;
+            lblfirdate.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblfirdate.Location = new System.Drawing.Point(356, 85);
+            lblfirdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblfirdate.Name = "lblfirdate";
+            lblfirdate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            lblfirdate.Size = new System.Drawing.Size(49, 32);
+            lblfirdate.TabIndex = 10;
+            lblfirdate.Text = "مورخہ:";
+            // 
+            // lbloffence
+            // 
+            lbloffence.AutoSize = true;
+            lbloffence.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbloffence.Location = new System.Drawing.Point(240, 85);
+            lbloffence.Name = "lbloffence";
+            lbloffence.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            lbloffence.Size = new System.Drawing.Size(37, 32);
+            lbloffence.TabIndex = 20;
+            lbloffence.Text = "جرم:";
+            // 
+            // lblmudai
+            // 
+            lblmudai.AutoSize = true;
+            lblmudai.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblmudai.Location = new System.Drawing.Point(472, 48);
+            lblmudai.Name = "lblmudai";
+            lblmudai.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            lblmudai.Size = new System.Drawing.Size(73, 32);
+            lblmudai.TabIndex = 23;
+            lblmudai.Text = "سرکار بذریعہ:";
+            lblmudai.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblaccname
+            // 
+            lblaccname.AutoSize = true;
+            lblaccname.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblaccname.Location = new System.Drawing.Point(504, 120);
+            lblaccname.Name = "lblaccname";
+            lblaccname.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            lblaccname.Size = new System.Drawing.Size(35, 32);
+            lblaccname.TabIndex = 24;
+            lblaccname.Text = "بنام:";
+            lblaccname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // firdate
+            // 
+            firdate.BackColor = System.Drawing.Color.White;
+            firdate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            firdate.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            firdate.Location = new System.Drawing.Point(280, 88);
+            firdate.Name = "firdate";
+            firdate.ReadOnly = true;
+            firdate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            firdate.Size = new System.Drawing.Size(75, 33);
+            firdate.TabIndex = 30;
+            // 
+            // offence
+            // 
+            offence.BackColor = System.Drawing.Color.White;
+            offence.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            offence.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            offence.Location = new System.Drawing.Point(6, 88);
+            offence.Name = "offence";
+            offence.Size = new System.Drawing.Size(234, 33);
+            offence.TabIndex = 31;
+            // 
+            // mudai
+            // 
+            mudai.BackColor = System.Drawing.Color.White;
+            mudai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            mudai.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            mudai.Location = new System.Drawing.Point(7, 48);
+            mudai.Name = "mudai";
+            mudai.ReadOnly = true;
+            mudai.Size = new System.Drawing.Size(457, 33);
+            mudai.TabIndex = 33;
+            // 
+            // txtdistrict
+            // 
+            txtdistrict.BackColor = System.Drawing.Color.White;
+            txtdistrict.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtdistrict.ContextMenuStrip = contextMenuStrip1;
+            txtdistrict.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtdistrict.Location = new System.Drawing.Point(7, 13);
+            txtdistrict.Name = "txtdistrict";
+            txtdistrict.ReadOnly = true;
+            txtdistrict.Size = new System.Drawing.Size(72, 33);
+            txtdistrict.TabIndex = 35;
+            // 
+            // accname
+            // 
+            accname.BackColor = System.Drawing.Color.White;
+            accname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            accname.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            accname.Location = new System.Drawing.Point(144, 120);
+            accname.Name = "accname";
+            accname.ReadOnly = true;
+            accname.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            accname.Size = new System.Drawing.Size(354, 28);
+            accname.TabIndex = 37;
+            accname.Text = "";
+            // 
+            // acccnic
+            // 
+            acccnic.BackColor = System.Drawing.Color.White;
+            acccnic.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            acccnic.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            acccnic.Location = new System.Drawing.Point(8, 120);
+            acccnic.Name = "acccnic";
+            acccnic.ReadOnly = true;
+            acccnic.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            acccnic.Size = new System.Drawing.Size(136, 28);
+            acccnic.TabIndex = 39;
+            acccnic.Text = "";
+            // 
+            // panelmap
+            // 
+            panelmap.AllowDrop = true;
+            panelmap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            panelmap.AutoScroll = true;
+            panelmap.AutoSize = true;
+            panelmap.BackColor = System.Drawing.Color.White;
+            panelmap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            panelmap.Controls.Add(mapbox);
+            panelmap.Controls.Add(head);
+            panelmap.Controls.Add(mapdate);
+            panelmap.Controls.Add(picnews);
+            panelmap.Controls.Add(body);
+            panelmap.Controls.Add(iofficer);
+            panelmap.Controls.Add(map_combo);
+            panelmap.Controls.Add(acccnic);
+            panelmap.Controls.Add(accname);
+            panelmap.Controls.Add(txtdistrict);
+            panelmap.Controls.Add(mudai);
+            panelmap.Controls.Add(offence);
+            panelmap.Controls.Add(firdate);
+            panelmap.Controls.Add(lblaccname);
+            panelmap.Controls.Add(lblmudai);
+            panelmap.Controls.Add(lbloffence);
+            panelmap.Controls.Add(lblfirdate);
+            panelmap.Controls.Add(ps);
+            panelmap.Controls.Add(firno);
+            panelmap.Controls.Add(lblfirno);
+            panelmap.Controls.Add(lblps);
+            panelmap.Controls.Add(lbldistrict);
+            panelmap.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            panelmap.Location = new System.Drawing.Point(28, 1);
+            panelmap.Name = "panelmap";
+            panelmap.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            panelmap.Size = new System.Drawing.Size(603, 860);
+            panelmap.TabIndex = 40;
+            // 
+            // mapbox
+            // 
+            mapbox.ErrorImage = null;
+            mapbox.Location = new System.Drawing.Point(128, 260);
+            mapbox.Name = "mapbox";
+            mapbox.Size = new System.Drawing.Size(416, 408);
+            mapbox.TabIndex = 0;
+            mapbox.TabStop = false;
+            mapbox.Click += mapbox_Click;
+            // 
+            // head
+            // 
+            head.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            head.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 21.75F, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            head.Location = new System.Drawing.Point(56, 160);
+            head.Name = "head";
+            head.Size = new System.Drawing.Size(480, 56);
+            head.TabIndex = 45;
+            head.Text = "";
+            // 
+            // mapdate
+            // 
+            mapdate.BackColor = System.Drawing.Color.White;
+            mapdate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            mapdate.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            mapdate.Location = new System.Drawing.Point(35, 824);
+            mapdate.Name = "mapdate";
+            mapdate.Size = new System.Drawing.Size(181, 33);
+            mapdate.TabIndex = 4;
+            mapdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // picnews
+            // 
+            picnews.Image = (System.Drawing.Image)resources.GetObject("picnews.Image");
+            picnews.Location = new System.Drawing.Point(5, 224);
+            picnews.Name = "picnews";
+            picnews.Size = new System.Drawing.Size(122, 121);
+            picnews.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            picnews.TabIndex = 43;
+            picnews.TabStop = false;
+            // 
+            // body
+            // 
+            body.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            body.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            body.Location = new System.Drawing.Point(12, 668);
+            body.Name = "body";
+            body.Size = new System.Drawing.Size(584, 121);
+            body.TabIndex = 2;
+            body.Text = "";
+            // 
+            // iofficer
+            // 
+            iofficer.BackColor = System.Drawing.Color.White;
+            iofficer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            iofficer.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            iofficer.Location = new System.Drawing.Point(35, 784);
+            iofficer.Name = "iofficer";
+            iofficer.Size = new System.Drawing.Size(181, 33);
+            iofficer.TabIndex = 3;
+            iofficer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // mapPaperSizeCombo
+            // 
+            mapPaperSizeCombo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            mapPaperSizeCombo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            mapPaperSizeCombo.FormattingEnabled = true;
+            mapPaperSizeCombo.Location = new System.Drawing.Point(636, 24);
+            mapPaperSizeCombo.Name = "mapPaperSizeCombo";
+            mapPaperSizeCombo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            mapPaperSizeCombo.Size = new System.Drawing.Size(65, 28);
+            mapPaperSizeCombo.TabIndex = 65;
+            // 
+            // btnMapPrintPreview
+            // 
+            btnMapPrintPreview.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            btnMapPrintPreview.BackColor = System.Drawing.Color.White;
+            btnMapPrintPreview.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            btnMapPrintPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnMapPrintPreview.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnMapPrintPreview.Image = (System.Drawing.Image)resources.GetObject("btnMapPrintPreview.Image");
+            btnMapPrintPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnMapPrintPreview.Location = new System.Drawing.Point(648, 80);
+            btnMapPrintPreview.Name = "btnMapPrintPreview";
+            btnMapPrintPreview.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            btnMapPrintPreview.Size = new System.Drawing.Size(40, 37);
+            btnMapPrintPreview.TabIndex = 64;
+            btnMapPrintPreview.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnMapPrintPreview.UseVisualStyleBackColor = false;
+            btnMapPrintPreview.Visible = false;
+            // 
+            // printPreviewDialog1
+            // 
+            printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            printPreviewDialog1.Enabled = true;
+            printPreviewDialog1.Icon = (System.Drawing.Icon)resources.GetObject("printPreviewDialog1.Icon");
+            printPreviewDialog1.Name = "printPreviewDialog1";
+            printPreviewDialog1.Visible = false;
+            // 
+            // btnReplace
+            // 
+            btnReplace.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            btnReplace.BackColor = System.Drawing.Color.White;
+            btnReplace.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            btnReplace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnReplace.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnReplace.Image = (System.Drawing.Image)resources.GetObject("btnReplace.Image");
+            btnReplace.Location = new System.Drawing.Point(640, 384);
+            btnReplace.Name = "btnReplace";
+            btnReplace.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            btnReplace.Size = new System.Drawing.Size(50, 50);
+            btnReplace.TabIndex = 161;
+            btnReplace.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnReplace.UseVisualStyleBackColor = false;
+            btnReplace.Click += btnReplace_Click;
+            // 
+            // FrmMaps
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            AutoScroll = true;
+            BackColor = System.Drawing.Color.White;
+            ClientSize = new System.Drawing.Size(761, 780);
+            Controls.Add(btnReplace);
+            Controls.Add(mapPaperSizeCombo);
+            Controls.Add(btnMapPrintPreview);
+            Controls.Add(btnclose);
+            Controls.Add(btnsave);
+            Controls.Add(btnMapPrint);
+            Controls.Add(btnupdate);
+            Controls.Add(panelmap);
+            Name = "FrmMaps";
+            RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            ShowIcon = false;
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            panelmap.ResumeLayout(false);
+            panelmap.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)mapbox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picnews).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button btnclose;
+        private System.Windows.Forms.Button btnsave;
+        private System.Windows.Forms.Button btnMapPrint;
+        private System.Windows.Forms.Button btnupdate;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label lbldistrict;
+        private System.Windows.Forms.Label lblps;
+        private System.Windows.Forms.Label lblfirno;
+        private System.Windows.Forms.TextBox firno;
+        private System.Windows.Forms.TextBox ps;
+        private System.Windows.Forms.ComboBox map_combo;
+        private System.Windows.Forms.Label lblfirdate;
+        private System.Windows.Forms.Label lbloffence;
+        private System.Windows.Forms.Label lblmudai;
+        private System.Windows.Forms.Label lblaccname;
+        private System.Windows.Forms.TextBox firdate;
+        private System.Windows.Forms.TextBox offence;
+        private System.Windows.Forms.TextBox mudai;
+        private System.Windows.Forms.TextBox txtdistrict;
+        private System.Windows.Forms.RichTextBox accname;
+        private System.Windows.Forms.RichTextBox txtmap;
+        private System.Windows.Forms.RichTextBox acccnic;
+        private System.Windows.Forms.Panel panelmap;
+        private System.Windows.Forms.TextBox iofficer;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox body;
+        private System.Windows.Forms.PictureBox picnews;
+        private System.Windows.Forms.TextBox mapdate;
+        private System.Windows.Forms.RichTextBox head;
+        private System.Windows.Forms.ComboBox mapPaperSizeCombo;
+        private System.Windows.Forms.Button btnMapPrintPreview;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.PictureBox mapbox;
+        private System.Windows.Forms.Button btnReplace;
+        //private System.Windows.Forms.TextBox txtmap;
+    }
+}

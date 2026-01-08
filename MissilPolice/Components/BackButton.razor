@@ -1,0 +1,15 @@
+﻿@inject IJSRuntime JS
+
+<button class="app-back-button" type="button" title="واپس جائیں" aria-label="واپس جائیں" @onclick="GoBack">
+    <span class="app-back-button__icon" aria-hidden="true">&larr;</span>
+    <span class="app-back-button__text">واپس</span>
+</button>
+
+@code {
+    [Parameter] public string? FallbackUrl { get; set; } = "/";
+
+    private Task GoBack()
+    {
+        return JS.InvokeVoidAsync("missilPolice.goBack", FallbackUrl ?? "/").AsTask();
+    }
+}

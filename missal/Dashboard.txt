@@ -1,0 +1,1298 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+
+using System.Windows.Forms;
+using System.Windows.Forms.Design;
+using System.Xml.Linq;
+
+
+using Microsoft.CSharp;
+using System.Data.SQLite;
+
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.ApplicationServices;
+
+
+namespace missalpolice
+{
+    [global::Microsoft.VisualBasic.CompilerServices.DesignerGeneratedAttribute()]
+    public partial class FrmDashboard : global::System.Windows.Forms.Form
+    {
+
+        // Form overrides dispose to clean up the component list.
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        protected override void Dispose(global::System.Boolean disposing)
+        {
+            try
+            {
+                if (((disposing) && this.components is not null))
+                {
+                    this.components.Dispose();
+                }
+            }
+            finally
+            {
+                base.Dispose(disposing);
+            }
+        }
+
+
+        // Required by the Windows Form Designer
+        private global::System.ComponentModel.IContainer components;
+
+        // NOTE: The following procedure is required by the Windows Form Designer
+        // It can be modified using the Windows Form Designer.  
+        // Do not modify it using the code editor.
+        [global::System.Diagnostics.DebuggerStepThroughAttribute()]
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            Panel1 = new Panel();
+            lbldatetime = new TextBox();
+            btn_srch_clear = new Button();
+            txtStartDate = new TextBox();
+            txtTrialStatus = new TextBox();
+            txtDaysRemaining = new TextBox();
+            txtProgressPercentage = new TextBox();
+            txtExpirationDate = new TextBox();
+            txtcurrentpageno = new TextBox();
+            fir_search = new TextBox();
+            btnfirstpage = new Button();
+            btnlastpage = new Button();
+            btnpreviouspage = new Button();
+            btnnextpage = new Button();
+            btn_print_chalan = new Button();
+            btn_chalan = new Button();
+            MDG = new DataGridView();
+            FIRID = new DataGridViewTextBoxColumn();
+            vdriver = new DataGridViewTextBoxColumn();
+            vehicleno = new DataGridViewTextBoxColumn();
+            dsp = new DataGridViewTextBoxColumn();
+            divisionsp = new DataGridViewTextBoxColumn();
+            sr_no = new DataGridViewTextBoxColumn();
+            firno = new DataGridViewTextBoxColumn();
+            firdate = new DataGridViewTextBoxColumn();
+            idate = new DataGridViewTextBoxColumn();
+            ps = new DataGridViewTextBoxColumn();
+            mudai = new DataGridViewTextBoxColumn();
+            firmobile = new DataGridViewTextBoxColumn();
+            fircnic = new DataGridViewTextBoxColumn();
+            offence = new DataGridViewTextBoxColumn();
+            murasla = new DataGridViewTextBoxColumn();
+            writer = new DataGridViewTextBoxColumn();
+            iofficer = new DataGridViewTextBoxColumn();
+            rank = new DataGridViewTextBoxColumn();
+            sho = new DataGridViewTextBoxColumn();
+            firstatus = new DataGridViewTextBoxColumn();
+            matanfir = new DataGridViewTextBoxColumn();
+            btndelfir = new DataGridViewImageColumn();
+            btneditfir = new DataGridViewImageColumn();
+            txtcurrentdate = new TextBox();
+            btn_missal = new Button();
+            btn_formsall = new Button();
+            btn_frmaddinfo = new Button();
+            btn_open_updfir = new Button();
+            btn_fir_enter = new Button();
+            FileMenu = new ToolStripMenuItem();
+            NewToolStripMenuItem = new ToolStripMenuItem();
+            OpenToolStripMenuItem = new ToolStripMenuItem();
+            ToolStripSeparator3 = new ToolStripSeparator();
+            ExitToolStripMenuItem = new ToolStripMenuItem();
+            ToolStripMenuA4 = new ToolStripMenuItem();
+            tsma4 = new ToolStripMenuItem();
+            tsmlegal = new ToolStripMenuItem();
+            HelpMenu = new ToolStripMenuItem();
+            ContentsToolStripMenuItem = new ToolStripMenuItem();
+            SearchToolStripMenuItem = new ToolStripMenuItem();
+            ToolStripSeparator8 = new ToolStripSeparator();
+            toolStripMenuItem3 = new ToolStripMenuItem();
+            AboutToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            ToolStripMenuItem2 = new ToolStripMenuItem();
+            MenuStrip = new MenuStrip();
+            tsTBusername = new ToolStripTextBox();
+            ToolTip = new ToolTip(components);
+            btnTotal = new Button();
+            btnUnderinv = new Button();
+            btnChalaned = new Button();
+            btnNoncchalan = new Button();
+            btnUntraced = new Button();
+            btnCancelled = new Button();
+            btnInvchanged = new Button();
+            btn512 = new Button();
+            panel2 = new Panel();
+            btnsorder = new Button();
+            btninfo = new Button();
+            picdashboard = new PictureBox();
+            panel3 = new Panel();
+            Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MDG).BeginInit();
+            MenuStrip.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picdashboard).BeginInit();
+            panel3.SuspendLayout();
+            SuspendLayout();
+            // 
+            // Panel1
+            // 
+            Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Panel1.BackColor = Color.White;
+            Panel1.BorderStyle = BorderStyle.FixedSingle;
+            Panel1.Controls.Add(lbldatetime);
+            Panel1.Controls.Add(btn_srch_clear);
+            Panel1.Controls.Add(txtStartDate);
+            Panel1.Controls.Add(txtTrialStatus);
+            Panel1.Controls.Add(txtDaysRemaining);
+            Panel1.Controls.Add(txtProgressPercentage);
+            Panel1.Controls.Add(txtExpirationDate);
+            Panel1.Controls.Add(txtcurrentpageno);
+            Panel1.Controls.Add(fir_search);
+            Panel1.Controls.Add(btnfirstpage);
+            Panel1.Controls.Add(btnlastpage);
+            Panel1.Controls.Add(btnpreviouspage);
+            Panel1.Controls.Add(btnnextpage);
+            Panel1.Controls.Add(btn_print_chalan);
+            Panel1.Controls.Add(btn_chalan);
+            Panel1.Controls.Add(MDG);
+            Panel1.ForeColor = Color.White;
+            Panel1.Location = new Point(0, 224);
+            Panel1.Name = "Panel1";
+            Panel1.Size = new Size(1021, 515);
+            Panel1.TabIndex = 11;
+            // 
+            // lbldatetime
+            // 
+            lbldatetime.BorderStyle = BorderStyle.None;
+            lbldatetime.Font = new Font("Arial", 17.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbldatetime.ForeColor = Color.RoyalBlue;
+            lbldatetime.Location = new Point(16, 15);
+            lbldatetime.Name = "lbldatetime";
+            lbldatetime.Size = new Size(432, 27);
+            lbldatetime.TabIndex = 23;
+            // 
+            // btn_srch_clear
+            // 
+            btn_srch_clear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_srch_clear.BackColor = Color.White;
+            btn_srch_clear.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_srch_clear.FlatAppearance.BorderColor = Color.White;
+            btn_srch_clear.FlatAppearance.BorderSize = 0;
+            btn_srch_clear.FlatStyle = FlatStyle.Flat;
+            btn_srch_clear.Font = new Font("Jameel Noori Nastaleeq", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_srch_clear.Image = (Image)resources.GetObject("btn_srch_clear.Image");
+            btn_srch_clear.Location = new Point(680, 11);
+            btn_srch_clear.Name = "btn_srch_clear";
+            btn_srch_clear.Size = new Size(36, 33);
+            btn_srch_clear.TabIndex = 2;
+            btn_srch_clear.UseVisualStyleBackColor = false;
+            btn_srch_clear.Click += Btn_srch_clear_Click;
+            // 
+            // txtStartDate
+            // 
+            txtStartDate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtStartDate.BorderStyle = BorderStyle.None;
+            txtStartDate.Font = new Font("Times New Roman", 9.75F, FontStyle.Underline, GraphicsUnit.Point);
+            txtStartDate.Location = new Point(9, 494);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.Size = new Size(100, 15);
+            txtStartDate.TabIndex = 22;
+            txtStartDate.TextAlign = HorizontalAlignment.Center;
+            txtStartDate.Visible = false;
+            txtStartDate.WordWrap = false;
+            // 
+            // txtTrialStatus
+            // 
+            txtTrialStatus.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtTrialStatus.BorderStyle = BorderStyle.None;
+            txtTrialStatus.Font = new Font("Times New Roman", 9.75F, FontStyle.Underline, GraphicsUnit.Point);
+            txtTrialStatus.Location = new Point(480, 494);
+            txtTrialStatus.Name = "txtTrialStatus";
+            txtTrialStatus.Size = new Size(140, 15);
+            txtTrialStatus.TabIndex = 21;
+            txtTrialStatus.TextAlign = HorizontalAlignment.Center;
+            txtTrialStatus.Visible = false;
+            txtTrialStatus.WordWrap = false;
+            // 
+            // txtDaysRemaining
+            // 
+            txtDaysRemaining.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtDaysRemaining.BorderStyle = BorderStyle.None;
+            txtDaysRemaining.Font = new Font("Times New Roman", 9.75F, FontStyle.Underline, GraphicsUnit.Point);
+            txtDaysRemaining.Location = new Point(344, 494);
+            txtDaysRemaining.Name = "txtDaysRemaining";
+            txtDaysRemaining.Size = new Size(120, 15);
+            txtDaysRemaining.TabIndex = 20;
+            txtDaysRemaining.TextAlign = HorizontalAlignment.Center;
+            txtDaysRemaining.Visible = false;
+            txtDaysRemaining.WordWrap = false;
+            // 
+            // txtProgressPercentage
+            // 
+            txtProgressPercentage.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtProgressPercentage.BorderStyle = BorderStyle.None;
+            txtProgressPercentage.Font = new Font("Times New Roman", 9.75F, FontStyle.Underline, GraphicsUnit.Point);
+            txtProgressPercentage.Location = new Point(232, 494);
+            txtProgressPercentage.Name = "txtProgressPercentage";
+            txtProgressPercentage.Size = new Size(100, 15);
+            txtProgressPercentage.TabIndex = 19;
+            txtProgressPercentage.TextAlign = HorizontalAlignment.Center;
+            txtProgressPercentage.Visible = false;
+            txtProgressPercentage.WordWrap = false;
+            // 
+            // txtExpirationDate
+            // 
+            txtExpirationDate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtExpirationDate.BorderStyle = BorderStyle.None;
+            txtExpirationDate.Font = new Font("Times New Roman", 9.75F, FontStyle.Underline, GraphicsUnit.Point);
+            txtExpirationDate.Location = new Point(120, 494);
+            txtExpirationDate.Name = "txtExpirationDate";
+            txtExpirationDate.Size = new Size(100, 15);
+            txtExpirationDate.TabIndex = 18;
+            txtExpirationDate.TextAlign = HorizontalAlignment.Center;
+            txtExpirationDate.Visible = false;
+            txtExpirationDate.WordWrap = false;
+            // 
+            // txtcurrentpageno
+            // 
+            txtcurrentpageno.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            txtcurrentpageno.Font = new Font("Arial", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            txtcurrentpageno.Location = new Point(901, 489);
+            txtcurrentpageno.Name = "txtcurrentpageno";
+            txtcurrentpageno.Size = new Size(40, 21);
+            txtcurrentpageno.TabIndex = 0;
+            txtcurrentpageno.TextAlign = HorizontalAlignment.Center;
+            txtcurrentpageno.Visible = false;
+            // 
+            // fir_search
+            // 
+            fir_search.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            fir_search.BackColor = Color.White;
+            fir_search.BorderStyle = BorderStyle.FixedSingle;
+            fir_search.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            fir_search.ForeColor = Color.Black;
+            fir_search.Location = new Point(720, 8);
+            fir_search.Name = "fir_search";
+            fir_search.PlaceholderText = "تلاش کریں";
+            fir_search.RightToLeft = RightToLeft.Yes;
+            fir_search.Size = new Size(288, 40);
+            fir_search.TabIndex = 4;
+            fir_search.TextAlign = HorizontalAlignment.Center;
+            fir_search.TextChanged += fir_search_TextChanged;
+            // 
+            // btnfirstpage
+            // 
+            btnfirstpage.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnfirstpage.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnfirstpage.FlatStyle = FlatStyle.Flat;
+            btnfirstpage.Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnfirstpage.ForeColor = SystemColors.HotTrack;
+            btnfirstpage.Location = new Point(833, 488);
+            btnfirstpage.Margin = new Padding(3, 1, 3, 3);
+            btnfirstpage.Name = "btnfirstpage";
+            btnfirstpage.Size = new Size(28, 23);
+            btnfirstpage.TabIndex = 17;
+            btnfirstpage.Text = "I<";
+            btnfirstpage.TextAlign = ContentAlignment.TopCenter;
+            btnfirstpage.UseVisualStyleBackColor = true;
+            btnfirstpage.Visible = false;
+            btnfirstpage.Click += Btnfirstpage_Click;
+            // 
+            // btnlastpage
+            // 
+            btnlastpage.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnlastpage.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnlastpage.FlatStyle = FlatStyle.Flat;
+            btnlastpage.Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnlastpage.ForeColor = SystemColors.HotTrack;
+            btnlastpage.Location = new Point(980, 488);
+            btnlastpage.Margin = new Padding(3, 1, 3, 3);
+            btnlastpage.Name = "btnlastpage";
+            btnlastpage.Size = new Size(28, 23);
+            btnlastpage.TabIndex = 16;
+            btnlastpage.Text = ">I";
+            btnlastpage.TextAlign = ContentAlignment.TopCenter;
+            btnlastpage.UseVisualStyleBackColor = true;
+            btnlastpage.Visible = false;
+            // 
+            // btnpreviouspage
+            // 
+            btnpreviouspage.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnpreviouspage.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnpreviouspage.FlatStyle = FlatStyle.Flat;
+            btnpreviouspage.Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnpreviouspage.ForeColor = SystemColors.HotTrack;
+            btnpreviouspage.Location = new Point(867, 488);
+            btnpreviouspage.Margin = new Padding(3, 1, 3, 3);
+            btnpreviouspage.Name = "btnpreviouspage";
+            btnpreviouspage.Size = new Size(28, 23);
+            btnpreviouspage.TabIndex = 15;
+            btnpreviouspage.Text = "<";
+            btnpreviouspage.TextAlign = ContentAlignment.TopCenter;
+            btnpreviouspage.UseVisualStyleBackColor = true;
+            btnpreviouspage.Visible = false;
+            // 
+            // btnnextpage
+            // 
+            btnnextpage.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnnextpage.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnnextpage.FlatStyle = FlatStyle.Flat;
+            btnnextpage.Font = new Font("Arial Narrow", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnnextpage.ForeColor = SystemColors.HotTrack;
+            btnnextpage.Location = new Point(946, 488);
+            btnnextpage.Margin = new Padding(3, 1, 3, 3);
+            btnnextpage.Name = "btnnextpage";
+            btnnextpage.Size = new Size(28, 23);
+            btnnextpage.TabIndex = 14;
+            btnnextpage.Text = ">";
+            btnnextpage.TextAlign = ContentAlignment.TopCenter;
+            btnnextpage.UseVisualStyleBackColor = true;
+            btnnextpage.Visible = false;
+            // 
+            // btn_print_chalan
+            // 
+            btn_print_chalan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_print_chalan.BackColor = Color.White;
+            btn_print_chalan.FlatStyle = FlatStyle.Flat;
+            btn_print_chalan.Font = new Font("Jameel Noori Nastaleeq", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_print_chalan.Location = new Point(-269, 9);
+            btn_print_chalan.Name = "btn_print_chalan";
+            btn_print_chalan.Size = new Size(74, 36);
+            btn_print_chalan.TabIndex = 8;
+            btn_print_chalan.Text = "پرنٹ کیس";
+            btn_print_chalan.UseVisualStyleBackColor = false;
+            btn_print_chalan.Visible = false;
+            // 
+            // btn_chalan
+            // 
+            btn_chalan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_chalan.BackColor = Color.White;
+            btn_chalan.FlatStyle = FlatStyle.Flat;
+            btn_chalan.Font = new Font("Jameel Noori Nastaleeq", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_chalan.Location = new Point(-189, 9);
+            btn_chalan.Name = "btn_chalan";
+            btn_chalan.Size = new Size(90, 36);
+            btn_chalan.TabIndex = 7;
+            btn_chalan.Text = "چالان";
+            btn_chalan.UseVisualStyleBackColor = false;
+            btn_chalan.Visible = false;
+            // 
+            // MDG
+            // 
+            MDG.AllowUserToAddRows = false;
+            MDG.AllowUserToDeleteRows = false;
+            MDG.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.BackColor = Color.LightSteelBlue;
+            dataGridViewCellStyle1.Font = new Font("Jameel Noori Nastaleeq", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.CornflowerBlue;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            MDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            MDG.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            MDG.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            MDG.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.LightGray;
+            dataGridViewCellStyle2.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.LightSalmon;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            MDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            MDG.ColumnHeadersHeight = 45;
+            MDG.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            MDG.Columns.AddRange(new DataGridViewColumn[] { FIRID, vdriver, vehicleno, dsp, divisionsp, sr_no, firno, firdate, idate, ps, mudai, firmobile, fircnic, offence, murasla, writer, iofficer, rank, sho, firstatus, matanfir, btndelfir, btneditfir });
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = SystemColors.Window;
+            dataGridViewCellStyle12.Font = new Font("Jameel Noori Nastaleeq", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            MDG.DefaultCellStyle = dataGridViewCellStyle12;
+            MDG.EditMode = DataGridViewEditMode.EditProgrammatically;
+            MDG.Location = new Point(3, 53);
+            MDG.Margin = new Padding(2);
+            MDG.MultiSelect = false;
+            MDG.Name = "MDG";
+            MDG.ReadOnly = true;
+            MDG.RightToLeft = RightToLeft.Yes;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = Color.LightGray;
+            dataGridViewCellStyle13.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            MDG.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            MDG.RowHeadersVisible = false;
+            MDG.RowHeadersWidth = 45;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = Color.Black;
+            MDG.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            MDG.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            MDG.RowTemplate.DefaultCellStyle.Font = new Font("Jameel Noori Nastaleeq", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            MDG.RowTemplate.DividerHeight = 1;
+            MDG.RowTemplate.Height = 45;
+            MDG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            MDG.ShowCellToolTips = false;
+            MDG.ShowEditingIcon = false;
+            MDG.Size = new Size(1014, 432);
+            MDG.TabIndex = 6;
+            // 
+            // FIRID
+            // 
+            FIRID.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            FIRID.DataPropertyName = "FIRID";
+            FIRID.FillWeight = 1F;
+            FIRID.HeaderText = "FIRID";
+            FIRID.Name = "FIRID";
+            FIRID.ReadOnly = true;
+            FIRID.Width = 5;
+            // 
+            // vdriver
+            // 
+            vdriver.DataPropertyName = "vdriver";
+            vdriver.HeaderText = "DRIVER";
+            vdriver.Name = "vdriver";
+            vdriver.ReadOnly = true;
+            vdriver.Visible = false;
+            // 
+            // vehicleno
+            // 
+            vehicleno.DataPropertyName = "vehicleno";
+            vehicleno.HeaderText = "vehicle";
+            vehicleno.Name = "vehicleno";
+            vehicleno.ReadOnly = true;
+            vehicleno.Visible = false;
+            // 
+            // dsp
+            // 
+            dsp.DataPropertyName = "dsp";
+            dsp.HeaderText = "DSP";
+            dsp.Name = "dsp";
+            dsp.ReadOnly = true;
+            dsp.Visible = false;
+            // 
+            // divisionsp
+            // 
+            divisionsp.DataPropertyName = "divisionsp";
+            divisionsp.HeaderText = "SP";
+            divisionsp.Name = "divisionsp";
+            divisionsp.ReadOnly = true;
+            divisionsp.Visible = false;
+            // 
+            // sr_no
+            // 
+            sr_no.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            sr_no.DataPropertyName = "sr_no";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+            sr_no.DefaultCellStyle = dataGridViewCellStyle3;
+            sr_no.DividerWidth = 3;
+            sr_no.FillWeight = 5F;
+            sr_no.HeaderText = "نمبر شمار";
+            sr_no.MinimumWidth = 15;
+            sr_no.Name = "sr_no";
+            sr_no.ReadOnly = true;
+            sr_no.Resizable = DataGridViewTriState.False;
+            sr_no.Width = 15;
+            // 
+            // firno
+            // 
+            firno.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            firno.DataPropertyName = "firno";
+            dataGridViewCellStyle4.Font = new Font("Jameel Noori Nastaleeq", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            firno.DefaultCellStyle = dataGridViewCellStyle4;
+            firno.FillWeight = 15F;
+            firno.HeaderText = "مقدمہ نمبر";
+            firno.MinimumWidth = 70;
+            firno.Name = "firno";
+            firno.ReadOnly = true;
+            // 
+            // firdate
+            // 
+            firdate.DataPropertyName = "firdate";
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.Format = "dd-mm-yyyy";
+            dataGridViewCellStyle5.NullValue = null;
+            firdate.DefaultCellStyle = dataGridViewCellStyle5;
+            firdate.FillWeight = 20F;
+            firdate.HeaderText = "مورخہ";
+            firdate.MinimumWidth = 100;
+            firdate.Name = "firdate";
+            firdate.ReadOnly = true;
+            // 
+            // idate
+            // 
+            idate.DataPropertyName = "idate";
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.Format = "D";
+            dataGridViewCellStyle6.NullValue = null;
+            idate.DefaultCellStyle = dataGridViewCellStyle6;
+            idate.HeaderText = "تاریخ وقوعہ";
+            idate.Name = "idate";
+            idate.ReadOnly = true;
+            // 
+            // ps
+            // 
+            ps.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ps.DataPropertyName = "ps";
+            ps.FillWeight = 25F;
+            ps.HeaderText = "تھانہ";
+            ps.MinimumWidth = 100;
+            ps.Name = "ps";
+            ps.ReadOnly = true;
+            ps.Width = 120;
+            // 
+            // mudai
+            // 
+            mudai.DataPropertyName = "mudai";
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Font = new Font("Jameel Noori Nastaleeq", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            mudai.DefaultCellStyle = dataGridViewCellStyle7;
+            mudai.FillWeight = 60F;
+            mudai.HeaderText = "مدعی مقدمہ";
+            mudai.MinimumWidth = 150;
+            mudai.Name = "mudai";
+            mudai.ReadOnly = true;
+            mudai.Resizable = DataGridViewTriState.False;
+            // 
+            // firmobile
+            // 
+            firmobile.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            firmobile.DataPropertyName = "firmobile";
+            firmobile.FillWeight = 25F;
+            firmobile.HeaderText = "موبائل نمبر";
+            firmobile.MinimumWidth = 100;
+            firmobile.Name = "firmobile";
+            firmobile.ReadOnly = true;
+            firmobile.Width = 120;
+            // 
+            // fircnic
+            // 
+            fircnic.DataPropertyName = "fircnic";
+            fircnic.HeaderText = "شناختی کارڈ";
+            fircnic.Name = "fircnic";
+            fircnic.ReadOnly = true;
+            // 
+            // offence
+            // 
+            offence.DataPropertyName = "offence";
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleRight;
+            offence.DefaultCellStyle = dataGridViewCellStyle8;
+            offence.FillWeight = 50F;
+            offence.HeaderText = "جرم";
+            offence.MinimumWidth = 100;
+            offence.Name = "offence";
+            offence.ReadOnly = true;
+            // 
+            // murasla
+            // 
+            murasla.DataPropertyName = "murasla";
+            murasla.HeaderText = "مرسلہ";
+            murasla.Name = "murasla";
+            murasla.ReadOnly = true;
+            // 
+            // writer
+            // 
+            writer.DataPropertyName = "writer";
+            writer.HeaderText = "تحریر کنندہ";
+            writer.Name = "writer";
+            writer.ReadOnly = true;
+            // 
+            // iofficer
+            // 
+            iofficer.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            iofficer.DataPropertyName = "iofficer";
+            iofficer.FillWeight = 20F;
+            iofficer.HeaderText = "تفتیشی آفیسر";
+            iofficer.MinimumWidth = 150;
+            iofficer.Name = "iofficer";
+            iofficer.ReadOnly = true;
+            iofficer.Width = 150;
+            // 
+            // rank
+            // 
+            rank.DataPropertyName = "rank";
+            rank.HeaderText = "عہدہ";
+            rank.Name = "rank";
+            rank.ReadOnly = true;
+            rank.Resizable = DataGridViewTriState.True;
+            // 
+            // sho
+            // 
+            sho.DataPropertyName = "sho";
+            dataGridViewCellStyle9.Font = new Font("Jameel Noori Nastaleeq", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            sho.DefaultCellStyle = dataGridViewCellStyle9;
+            sho.HeaderText = "SHO";
+            sho.Name = "sho";
+            sho.ReadOnly = true;
+            // 
+            // firstatus
+            // 
+            firstatus.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            firstatus.DataPropertyName = "firstatus";
+            firstatus.FillWeight = 10F;
+            firstatus.HeaderText = "پوزیشن مقدمہ";
+            firstatus.MinimumWidth = 40;
+            firstatus.Name = "firstatus";
+            firstatus.ReadOnly = true;
+            firstatus.Width = 40;
+            // 
+            // matanfir
+            // 
+            matanfir.DataPropertyName = "matanfir";
+            matanfir.HeaderText = "متن FIR";
+            matanfir.Name = "matanfir";
+            matanfir.ReadOnly = true;
+            // 
+            // btndelfir
+            // 
+            btndelfir.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            btndelfir.DataPropertyName = "btndelfir";
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.NullValue = resources.GetObject("dataGridViewCellStyle10.NullValue");
+            btndelfir.DefaultCellStyle = dataGridViewCellStyle10;
+            btndelfir.FillWeight = 25F;
+            btndelfir.HeaderText = "حذف";
+            btndelfir.Image = (Image)resources.GetObject("btndelfir.Image");
+            btndelfir.MinimumWidth = 25;
+            btndelfir.Name = "btndelfir";
+            btndelfir.ReadOnly = true;
+            btndelfir.Width = 25;
+            // 
+            // btneditfir
+            // 
+            btneditfir.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            btneditfir.DataPropertyName = "btneditfir";
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.NullValue = resources.GetObject("dataGridViewCellStyle11.NullValue");
+            btneditfir.DefaultCellStyle = dataGridViewCellStyle11;
+            btneditfir.FillWeight = 25F;
+            btneditfir.HeaderText = "تبدیلی";
+            btneditfir.MinimumWidth = 25;
+            btneditfir.Name = "btneditfir";
+            btneditfir.ReadOnly = true;
+            btneditfir.Resizable = DataGridViewTriState.True;
+            btneditfir.Width = 25;
+            // 
+            // txtcurrentdate
+            // 
+            txtcurrentdate.Location = new Point(104, 632);
+            txtcurrentdate.Name = "txtcurrentdate";
+            txtcurrentdate.Size = new Size(93, 23);
+            txtcurrentdate.TabIndex = 13;
+            txtcurrentdate.Visible = false;
+            txtcurrentdate.TextChanged += txtcurrentdate_TextChanged;
+            // 
+            // btn_missal
+            // 
+            btn_missal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_missal.BackColor = Color.White;
+            btn_missal.FlatStyle = FlatStyle.Flat;
+            btn_missal.Font = new Font("Jameel Noori Nastaleeq", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_missal.Location = new Point(112, 592);
+            btn_missal.Name = "btn_missal";
+            btn_missal.Size = new Size(107, 36);
+            btn_missal.TabIndex = 6;
+            btn_missal.Text = "مسل";
+            btn_missal.UseVisualStyleBackColor = false;
+            btn_missal.Visible = false;
+            // 
+            // btn_formsall
+            // 
+            btn_formsall.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_formsall.BackColor = Color.White;
+            btn_formsall.FlatAppearance.BorderColor = Color.White;
+            btn_formsall.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btn_formsall.FlatStyle = FlatStyle.Flat;
+            btn_formsall.Font = new Font("Jameel Noori Nastaleeq", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_formsall.ForeColor = Color.MidnightBlue;
+            btn_formsall.Location = new Point(8, 615);
+            btn_formsall.Name = "btn_formsall";
+            btn_formsall.Size = new Size(90, 36);
+            btn_formsall.TabIndex = 4;
+            btn_formsall.Text = "تمام فارم ہائے";
+            btn_formsall.UseVisualStyleBackColor = false;
+            btn_formsall.Visible = false;
+            btn_formsall.Click += Btn_formsall_Click;
+            // 
+            // btn_frmaddinfo
+            // 
+            btn_frmaddinfo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_frmaddinfo.BackColor = Color.LightSlateGray;
+            btn_frmaddinfo.FlatAppearance.BorderColor = Color.Black;
+            btn_frmaddinfo.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btn_frmaddinfo.FlatStyle = FlatStyle.Flat;
+            btn_frmaddinfo.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_frmaddinfo.ForeColor = Color.Black;
+            btn_frmaddinfo.Image = (Image)resources.GetObject("btn_frmaddinfo.Image");
+            btn_frmaddinfo.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_frmaddinfo.Location = new Point(3, 371);
+            btn_frmaddinfo.Name = "btn_frmaddinfo";
+            btn_frmaddinfo.Size = new Size(221, 45);
+            btn_frmaddinfo.TabIndex = 3;
+            btn_frmaddinfo.Text = "تفصیل مقدمہ";
+            btn_frmaddinfo.UseVisualStyleBackColor = false;
+            btn_frmaddinfo.Click += btn_frmaddinfo_Click_1;
+            // 
+            // btn_open_updfir
+            // 
+            btn_open_updfir.BackColor = Color.LightSlateGray;
+            btn_open_updfir.FlatAppearance.BorderColor = Color.Black;
+            btn_open_updfir.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btn_open_updfir.FlatStyle = FlatStyle.Flat;
+            btn_open_updfir.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_open_updfir.ForeColor = Color.Black;
+            btn_open_updfir.ImageAlign = ContentAlignment.MiddleRight;
+            btn_open_updfir.Location = new Point(3, 308);
+            btn_open_updfir.Name = "btn_open_updfir";
+            btn_open_updfir.RightToLeft = RightToLeft.Yes;
+            btn_open_updfir.Size = new Size(221, 45);
+            btn_open_updfir.TabIndex = 2;
+            btn_open_updfir.Text = "FIRمیں تبدیلی ";
+            btn_open_updfir.UseVisualStyleBackColor = false;
+            btn_open_updfir.Click += Btn_open_updfir_Click;
+            // 
+            // btn_fir_enter
+            // 
+            btn_fir_enter.BackColor = Color.LightSlateGray;
+            btn_fir_enter.FlatAppearance.BorderColor = Color.Black;
+            btn_fir_enter.FlatAppearance.MouseDownBackColor = Color.White;
+            btn_fir_enter.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btn_fir_enter.FlatStyle = FlatStyle.Flat;
+            btn_fir_enter.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_fir_enter.ForeColor = Color.Black;
+            btn_fir_enter.ImageAlign = ContentAlignment.MiddleRight;
+            btn_fir_enter.Location = new Point(3, 244);
+            btn_fir_enter.Name = "btn_fir_enter";
+            btn_fir_enter.RightToLeft = RightToLeft.Yes;
+            btn_fir_enter.Size = new Size(221, 45);
+            btn_fir_enter.TabIndex = 1;
+            btn_fir_enter.Text = "FIRکا اندراج";
+            btn_fir_enter.UseVisualStyleBackColor = false;
+            btn_fir_enter.Click += Btn_fir_enter_Click;
+            // 
+            // FileMenu
+            // 
+            FileMenu.DropDownItems.AddRange(new ToolStripItem[] { NewToolStripMenuItem, OpenToolStripMenuItem, ToolStripSeparator3, ExitToolStripMenuItem });
+            FileMenu.Font = new Font("Jameel Noori Nastaleeq", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FileMenu.ForeColor = Color.Black;
+            FileMenu.ImageTransparentColor = Color.FromArgb(192, 192, 255);
+            FileMenu.Name = "FileMenu";
+            FileMenu.Size = new Size(46, 31);
+            FileMenu.Text = "فائل";
+            // 
+            // NewToolStripMenuItem
+            // 
+            NewToolStripMenuItem.Image = (Image)resources.GetObject("NewToolStripMenuItem.Image");
+            NewToolStripMenuItem.ImageAlign = ContentAlignment.MiddleRight;
+            NewToolStripMenuItem.ImageTransparentColor = Color.Black;
+            NewToolStripMenuItem.Name = "NewToolStripMenuItem";
+            NewToolStripMenuItem.ShowShortcutKeys = false;
+            NewToolStripMenuItem.Size = new Size(142, 32);
+            NewToolStripMenuItem.Text = "ڈیٹا محفوظ کریں";
+            NewToolStripMenuItem.Click += ShowNewForm;
+            // 
+            // OpenToolStripMenuItem
+            // 
+            OpenToolStripMenuItem.BackColor = Color.White;
+            OpenToolStripMenuItem.Image = (Image)resources.GetObject("OpenToolStripMenuItem.Image");
+            OpenToolStripMenuItem.ImageTransparentColor = Color.Black;
+            OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
+            OpenToolStripMenuItem.Size = new Size(142, 32);
+            OpenToolStripMenuItem.Text = "ڈیٹا اپلوڈ کریں";
+            OpenToolStripMenuItem.Click += OpenFile;
+            // 
+            // ToolStripSeparator3
+            // 
+            ToolStripSeparator3.Name = "ToolStripSeparator3";
+            ToolStripSeparator3.Size = new Size(139, 6);
+            // 
+            // ExitToolStripMenuItem
+            // 
+            ExitToolStripMenuItem.Image = (Image)resources.GetObject("ExitToolStripMenuItem.Image");
+            ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            ExitToolStripMenuItem.Size = new Size(142, 32);
+            ExitToolStripMenuItem.Text = "بند کریں";
+            ExitToolStripMenuItem.Click += ExitToolsStripMenuItem_Click;
+            // 
+            // ToolStripMenuA4
+            // 
+            ToolStripMenuA4.DropDownItems.AddRange(new ToolStripItem[] { tsma4, tsmlegal });
+            ToolStripMenuA4.ForeColor = Color.Black;
+            ToolStripMenuA4.Name = "ToolStripMenuA4";
+            ToolStripMenuA4.Size = new Size(79, 31);
+            ToolStripMenuA4.Text = "پرنٹ صفحات";
+            ToolStripMenuA4.Click += ToolStripMenuItem3_Click;
+            // 
+            // tsma4
+            // 
+            tsma4.Checked = true;
+            tsma4.CheckOnClick = true;
+            tsma4.CheckState = CheckState.Checked;
+            tsma4.Name = "tsma4";
+            tsma4.Size = new Size(132, 32);
+            tsma4.Text = "A4 پرنٹ";
+            tsma4.Click += tsma4_Click;
+            // 
+            // tsmlegal
+            // 
+            tsmlegal.Checked = true;
+            tsmlegal.CheckOnClick = true;
+            tsmlegal.CheckState = CheckState.Checked;
+            tsmlegal.Name = "tsmlegal";
+            tsmlegal.Size = new Size(132, 32);
+            tsmlegal.Text = "لیگل پرنٹ";
+            tsmlegal.Click += tsmlegal_Click;
+            // 
+            // HelpMenu
+            // 
+            HelpMenu.DropDownItems.AddRange(new ToolStripItem[] { ContentsToolStripMenuItem, SearchToolStripMenuItem, ToolStripSeparator8, toolStripMenuItem3, AboutToolStripMenuItem, toolStripMenuItem1 });
+            HelpMenu.ForeColor = Color.Black;
+            HelpMenu.Name = "HelpMenu";
+            HelpMenu.Size = new Size(109, 31);
+            HelpMenu.Text = "راہنمائی حاصل کریں";
+            // 
+            // ContentsToolStripMenuItem
+            // 
+            ContentsToolStripMenuItem.Name = "ContentsToolStripMenuItem";
+            ContentsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
+            ContentsToolStripMenuItem.ShowShortcutKeys = false;
+            ContentsToolStripMenuItem.Size = new Size(143, 32);
+            ContentsToolStripMenuItem.Text = "استعمال کا طریقہ";
+            ContentsToolStripMenuItem.Click += ContentsToolStripMenuItem_Click;
+            // 
+            // SearchToolStripMenuItem
+            // 
+            SearchToolStripMenuItem.ImageTransparentColor = Color.Black;
+            SearchToolStripMenuItem.Name = "SearchToolStripMenuItem";
+            SearchToolStripMenuItem.Size = new Size(143, 32);
+            SearchToolStripMenuItem.Text = "برائے رابطہ";
+            SearchToolStripMenuItem.Click += SearchToolStripMenuItem_Click;
+            // 
+            // ToolStripSeparator8
+            // 
+            ToolStripSeparator8.Name = "ToolStripSeparator8";
+            ToolStripSeparator8.Size = new Size(140, 6);
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(143, 32);
+            toolStripMenuItem3.Text = "لنک شیئر کریں";
+            toolStripMenuItem3.Click += toolStripMenuItem3_Click_1;
+            // 
+            // AboutToolStripMenuItem
+            // 
+            AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+            AboutToolStripMenuItem.Size = new Size(143, 32);
+            AboutToolStripMenuItem.Text = "سافٹ وئیر";
+            AboutToolStripMenuItem.Click += AboutToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(143, 32);
+            toolStripMenuItem1.Text = "رجسٹر";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            // 
+            // ToolStripMenuItem2
+            // 
+            ToolStripMenuItem2.Name = "ToolStripMenuItem2";
+            ToolStripMenuItem2.Size = new Size(12, 31);
+            // 
+            // MenuStrip
+            // 
+            MenuStrip.BackColor = Color.DarkCyan;
+            MenuStrip.Font = new Font("Jameel Noori Nastaleeq", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            MenuStrip.Items.AddRange(new ToolStripItem[] { FileMenu, ToolStripMenuA4, HelpMenu, ToolStripMenuItem2, tsTBusername });
+            MenuStrip.Location = new Point(0, 0);
+            MenuStrip.Name = "MenuStrip";
+            MenuStrip.Padding = new Padding(7, 2, 0, 2);
+            MenuStrip.RightToLeft = RightToLeft.Yes;
+            MenuStrip.Size = new Size(1248, 35);
+            MenuStrip.TabIndex = 5;
+            MenuStrip.Text = "MenuStrip";
+            // 
+            // tsTBusername
+            // 
+            tsTBusername.Alignment = ToolStripItemAlignment.Right;
+            tsTBusername.BackColor = Color.DarkCyan;
+            tsTBusername.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tsTBusername.ForeColor = Color.Black;
+            tsTBusername.Name = "tsTBusername";
+            tsTBusername.Size = new Size(145, 31);
+            tsTBusername.Text = "username";
+            tsTBusername.TextBoxTextAlign = HorizontalAlignment.Center;
+            // 
+            // btnTotal
+            // 
+            btnTotal.Anchor = AnchorStyles.Top;
+            btnTotal.AutoSize = true;
+            btnTotal.BackColor = Color.DarkGreen;
+            btnTotal.FlatAppearance.CheckedBackColor = Color.Black;
+            btnTotal.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 192, 255);
+            btnTotal.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnTotal.FlatStyle = FlatStyle.Flat;
+            btnTotal.Font = new Font("Jameel Noori Nastaleeq", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTotal.ForeColor = Color.White;
+            btnTotal.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTotal.Location = new Point(503, 8);
+            btnTotal.Name = "btnTotal";
+            btnTotal.Size = new Size(130, 82);
+            btnTotal.TabIndex = 13;
+            btnTotal.UseVisualStyleBackColor = false;
+            // 
+            // btnUnderinv
+            // 
+            btnUnderinv.Anchor = AnchorStyles.Top;
+            btnUnderinv.AutoSize = true;
+            btnUnderinv.BackColor = Color.DarkGreen;
+            btnUnderinv.FlatAppearance.CheckedBackColor = Color.Black;
+            btnUnderinv.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 224, 192);
+            btnUnderinv.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnUnderinv.FlatStyle = FlatStyle.Flat;
+            btnUnderinv.Font = new Font("Jameel Noori Nastaleeq", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUnderinv.ForeColor = Color.White;
+            btnUnderinv.Location = new Point(381, 8);
+            btnUnderinv.Name = "btnUnderinv";
+            btnUnderinv.Size = new Size(118, 82);
+            btnUnderinv.TabIndex = 14;
+            btnUnderinv.UseVisualStyleBackColor = false;
+            // 
+            // btnChalaned
+            // 
+            btnChalaned.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnChalaned.AutoSize = true;
+            btnChalaned.BackColor = Color.DarkGreen;
+            btnChalaned.FlatAppearance.CheckedBackColor = Color.Black;
+            btnChalaned.FlatAppearance.MouseDownBackColor = Color.OliveDrab;
+            btnChalaned.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnChalaned.FlatStyle = FlatStyle.Flat;
+            btnChalaned.Font = new Font("Jameel Noori Nastaleeq", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnChalaned.ForeColor = Color.White;
+            btnChalaned.Location = new Point(891, 8);
+            btnChalaned.Name = "btnChalaned";
+            btnChalaned.Size = new Size(118, 82);
+            btnChalaned.TabIndex = 15;
+            btnChalaned.UseVisualStyleBackColor = false;
+            // 
+            // btnNoncchalan
+            // 
+            btnNoncchalan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNoncchalan.AutoSize = true;
+            btnNoncchalan.BackColor = Color.DarkGreen;
+            btnNoncchalan.FlatAppearance.CheckedBackColor = Color.Black;
+            btnNoncchalan.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnNoncchalan.FlatStyle = FlatStyle.Flat;
+            btnNoncchalan.Font = new Font("Jameel Noori Nastaleeq", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNoncchalan.ForeColor = Color.White;
+            btnNoncchalan.Location = new Point(645, 8);
+            btnNoncchalan.Name = "btnNoncchalan";
+            btnNoncchalan.Size = new Size(118, 82);
+            btnNoncchalan.TabIndex = 16;
+            btnNoncchalan.UseVisualStyleBackColor = false;
+            // 
+            // btnUntraced
+            // 
+            btnUntraced.AutoSize = true;
+            btnUntraced.BackColor = Color.DarkGreen;
+            btnUntraced.FlatAppearance.CheckedBackColor = Color.Black;
+            btnUntraced.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnUntraced.FlatStyle = FlatStyle.Flat;
+            btnUntraced.Font = new Font("Jameel Noori Nastaleeq", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUntraced.ForeColor = Color.White;
+            btnUntraced.Location = new Point(252, 8);
+            btnUntraced.Name = "btnUntraced";
+            btnUntraced.Size = new Size(118, 82);
+            btnUntraced.TabIndex = 17;
+            btnUntraced.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelled
+            // 
+            btnCancelled.AutoSize = true;
+            btnCancelled.BackColor = Color.DarkGreen;
+            btnCancelled.FlatAppearance.CheckedBackColor = Color.Black;
+            btnCancelled.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnCancelled.FlatStyle = FlatStyle.Flat;
+            btnCancelled.Font = new Font("Jameel Noori Nastaleeq", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelled.ForeColor = Color.White;
+            btnCancelled.Location = new Point(129, 8);
+            btnCancelled.Name = "btnCancelled";
+            btnCancelled.Size = new Size(118, 82);
+            btnCancelled.TabIndex = 18;
+            btnCancelled.UseVisualStyleBackColor = false;
+            // 
+            // btnInvchanged
+            // 
+            btnInvchanged.AutoSize = true;
+            btnInvchanged.BackColor = Color.DarkGreen;
+            btnInvchanged.FlatAppearance.CheckedBackColor = Color.Black;
+            btnInvchanged.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnInvchanged.FlatStyle = FlatStyle.Flat;
+            btnInvchanged.Font = new Font("Jameel Noori Nastaleeq", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInvchanged.ForeColor = Color.White;
+            btnInvchanged.Location = new Point(7, 8);
+            btnInvchanged.Name = "btnInvchanged";
+            btnInvchanged.Size = new Size(118, 82);
+            btnInvchanged.TabIndex = 20;
+            btnInvchanged.UseVisualStyleBackColor = false;
+            // 
+            // btn512
+            // 
+            btn512.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn512.AutoSize = true;
+            btn512.BackColor = Color.DarkGreen;
+            btn512.FlatAppearance.CheckedBackColor = Color.Black;
+            btn512.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btn512.FlatStyle = FlatStyle.Flat;
+            btn512.Font = new Font("Jameel Noori Nastaleeq", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btn512.ForeColor = Color.White;
+            btn512.Location = new Point(768, 8);
+            btn512.Name = "btn512";
+            btn512.Size = new Size(118, 82);
+            btn512.TabIndex = 21;
+            btn512.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.SlateGray;
+            panel2.Controls.Add(btnsorder);
+            panel2.Controls.Add(btninfo);
+            panel2.Controls.Add(picdashboard);
+            panel2.Controls.Add(btn_fir_enter);
+            panel2.Controls.Add(btn_open_updfir);
+            panel2.Controls.Add(btn_frmaddinfo);
+            panel2.Controls.Add(btn_formsall);
+            panel2.Controls.Add(txtcurrentdate);
+            panel2.Controls.Add(btn_missal);
+            panel2.Dock = DockStyle.Right;
+            panel2.Location = new Point(1021, 35);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(227, 704);
+            panel2.TabIndex = 24;
+            // 
+            // btnsorder
+            // 
+            btnsorder.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnsorder.BackColor = Color.LightSlateGray;
+            btnsorder.FlatAppearance.BorderColor = Color.Black;
+            btnsorder.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnsorder.FlatStyle = FlatStyle.Flat;
+            btnsorder.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnsorder.ForeColor = Color.Black;
+            btnsorder.ImageAlign = ContentAlignment.MiddleLeft;
+            btnsorder.Location = new Point(3, 497);
+            btnsorder.Name = "btnsorder";
+            btnsorder.Size = new Size(221, 45);
+            btnsorder.TabIndex = 14;
+            btnsorder.Text = "کمپیوٹرائزڈ مسل کا لیٹر";
+            btnsorder.UseVisualStyleBackColor = false;
+            // 
+            // btninfo
+            // 
+            btninfo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btninfo.BackColor = Color.LightSlateGray;
+            btninfo.FlatAppearance.BorderColor = Color.Black;
+            btninfo.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btninfo.FlatStyle = FlatStyle.Flat;
+            btninfo.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btninfo.ForeColor = Color.Black;
+            btninfo.ImageAlign = ContentAlignment.MiddleLeft;
+            btninfo.Location = new Point(3, 434);
+            btninfo.Name = "btninfo";
+            btninfo.Size = new Size(221, 45);
+            btninfo.TabIndex = 5;
+            btninfo.Text = "ضروری معلومات";
+            btninfo.UseVisualStyleBackColor = false;
+            btninfo.Click += btninfo_Click;
+            // 
+            // picdashboard
+            // 
+            picdashboard.Location = new Point(16, 8);
+            picdashboard.Name = "picdashboard";
+            picdashboard.Size = new Size(200, 208);
+            picdashboard.TabIndex = 13;
+            picdashboard.TabStop = false;
+            // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel3.Controls.Add(btnNoncchalan);
+            panel3.Controls.Add(btnInvchanged);
+            panel3.Controls.Add(btnCancelled);
+            panel3.Controls.Add(btnUntraced);
+            panel3.Controls.Add(btnTotal);
+            panel3.Controls.Add(btnUnderinv);
+            panel3.Controls.Add(btnChalaned);
+            panel3.Controls.Add(btn512);
+            panel3.Location = new Point(4, 80);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1016, 96);
+            panel3.TabIndex = 26;
+            // 
+            // FrmDashboard
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1248, 739);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(Panel1);
+            Controls.Add(MenuStrip);
+            DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            IsMdiContainer = true;
+            MainMenuStrip = MenuStrip;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "FrmDashboard";
+            StartPosition = FormStartPosition.CenterScreen;
+            WindowState = FormWindowState.Maximized;
+            Activated += FrmDashboard_Activated;
+            Load += FrmDashboard_Load;
+            Panel1.ResumeLayout(false);
+            Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MDG).EndInit();
+            MenuStrip.ResumeLayout(false);
+            MenuStrip.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picdashboard).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        internal global::System.Windows.Forms.Panel Panel1;
+        internal global::System.Windows.Forms.TextBox fir_search;
+        internal global::System.Windows.Forms.DataGridView MDG;
+        internal global::System.Windows.Forms.Button btn_srch_clear;
+        internal global::System.Windows.Forms.Button btn_fir_enter;
+        internal global::System.Windows.Forms.Button btn_formsall;
+        internal global::System.Windows.Forms.DataGridViewImageColumn DataGridViewImageColumn5;
+        internal global::System.Windows.Forms.DataGridViewImageColumn DataGridViewImageColumn6;
+        internal global::System.Windows.Forms.DataGridViewImageColumn DataGridViewImageColumn7;
+        internal global::System.Windows.Forms.DataGridViewImageColumn DataGridViewImageColumn8;
+        internal global::System.Windows.Forms.Button btn_print_chalan;
+        internal global::System.Windows.Forms.Button btn_chalan;
+        internal global::System.Windows.Forms.Button btn_missal;
+        internal global::System.Windows.Forms.Button btn_open_updfir;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn11;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn12;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn13;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn24;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn15;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn16;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn17;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn27;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn14;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn31;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn30;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn18;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn19;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn21;
+        internal global::System.Windows.Forms.DataGridViewTextBoxColumn DataGridViewTextBoxColumn20;
+        internal global::System.Windows.Forms.ToolStripMenuItem FileMenu;
+        internal global::System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem;
+        internal global::System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
+        internal global::System.Windows.Forms.ToolStripSeparator ToolStripSeparator3;
+        internal global::System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
+        internal global::System.Windows.Forms.ToolStripMenuItem RedoToolStripMenuItem;
+        internal global::System.Windows.Forms.ToolStripMenuItem StatusBarToolStripMenuItem;
+        internal global::System.Windows.Forms.ToolStripMenuItem ToolStripMenuA4;
+        internal global::System.Windows.Forms.ToolStripMenuItem tsma4;
+        internal global::System.Windows.Forms.ToolStripMenuItem tsmlegal;
+        internal global::System.Windows.Forms.ToolStripMenuItem HelpMenu;
+        internal global::System.Windows.Forms.ToolStripMenuItem ContentsToolStripMenuItem;
+        internal global::System.Windows.Forms.ToolStripMenuItem SearchToolStripMenuItem;
+        internal global::System.Windows.Forms.ToolStripSeparator ToolStripSeparator8;
+        internal global::System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
+        internal global::System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem2;
+        internal global::System.Windows.Forms.MenuStrip MenuStrip;
+        internal global::System.Windows.Forms.ToolTip ToolTip;
+        private Button btn_frmaddinfo;
+        private TextBox txtcurrentdate;
+        private Button btnnextpage;
+        private Button btnfirstpage;
+        private Button btnlastpage;
+        private Button btnpreviouspage;
+        private TextBox txtcurrentpageno;
+        private TextBox txtcurpageno;
+        private TextBox txtExpirationDate;
+        private TextBox txtProgressPercentage;
+        private TextBox txtDaysRemaining;
+        private TextBox txtTrialStatus;
+        private TextBox txtStartDate;
+        private Button btnTotal;
+        private Button btnUnderinv;
+        private Button btnChalaned;
+        private Button btnNoncchalan;
+        private Button btnUntraced;
+        private Button btnCancelled;
+        private Button btnInvchanged;
+        private Panel panel2;
+        private PictureBox picdashboard;
+        private ToolStripTextBox tsTBusername;
+        private Button btninfo;
+        private Button btn512;
+        private Panel panel3;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private TextBox lbldatetime;
+        private DataGridViewTextBoxColumn FIRID;
+        private DataGridViewTextBoxColumn vdriver;
+        private DataGridViewTextBoxColumn vehicleno;
+        private DataGridViewTextBoxColumn dsp;
+        private DataGridViewTextBoxColumn divisionsp;
+        private DataGridViewTextBoxColumn sr_no;
+        private DataGridViewTextBoxColumn firno;
+        private DataGridViewTextBoxColumn firdate;
+        private DataGridViewTextBoxColumn idate;
+        private DataGridViewTextBoxColumn ps;
+        private DataGridViewTextBoxColumn mudai;
+        private DataGridViewTextBoxColumn firmobile;
+        private DataGridViewTextBoxColumn fircnic;
+        private DataGridViewTextBoxColumn offence;
+        private DataGridViewTextBoxColumn murasla;
+        private DataGridViewTextBoxColumn writer;
+        private DataGridViewTextBoxColumn iofficer;
+        private DataGridViewTextBoxColumn rank;
+        private DataGridViewTextBoxColumn sho;
+        private DataGridViewTextBoxColumn firstatus;
+        private DataGridViewTextBoxColumn matanfir;
+        private DataGridViewImageColumn btndelfir;
+        private DataGridViewImageColumn btneditfir;
+        private Button btnsorder;
+        private ToolStripMenuItem toolStripMenuItem3;
+    }
+}

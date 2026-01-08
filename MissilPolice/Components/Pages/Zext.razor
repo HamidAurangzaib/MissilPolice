@@ -1,0 +1,74 @@
+﻿@page "/zext"
+@layout Layout.FullScreenLayout
+@inject IJSRuntime JS
+
+<div class="zext-screen" dir="rtl">
+    <header class="zext-header">
+        <h1>ضمنی رپورٹ</h1>
+        <div class="zext-controls">
+            <label>سائز</label>
+            <select>
+                <option>A4</option>
+                <option>A3</option>
+            </select>
+            <label>پرنٹ</label>
+            <select>
+                <option>موجودہ صفحہ</option>
+            </select>
+            <label>ڈسپلے</label>
+            <select>
+                <option>تمام صفحات</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="zext-body">
+        <section class="zext-preview">
+            <article class="doc-sheet">
+                <div class="doc-header">
+                    <div class="doc-meta">
+                        <div>مقدمہ نمبر: 25/25</div>
+                        <div>مورخہ: 05.11.2025</div>
+                        <div>دفعہ: 380</div>
+                    </div>
+                    <div class="doc-title">ضمنی رپورٹ نمبر 1 بر مقدمہ نمبر 25/25 بجرم 380 تھانہ سول لائنز</div>
+                </div>
+
+                <div class="doc-map">
+                    <div class="compass">شمال</div>
+                    <div class="map-lines"></div>
+                </div>
+
+                <div class="doc-notes">
+                    <p>1. نقشہ موقع A4 سائز پر تیار کیا گیا ہے جس میں تمام تفصیلات درج ہیں اور گواہان کے بیانات قلمبند کیے گئے ہیں۔</p>
+                    <p>2. موقع ملاحظہ سے پایا گیا کہ جائے وقوعہ ایک رہائشی مکان ہے جہاں سے چوری کی واردات رپورٹ ہوئی ہے۔</p>
+                </div>
+            </article>
+        </section>
+
+        <aside class="zext-tools">
+            <button class="tool-button success" title="U.O-U?U^O, UcOأ±UOUآ§">
+                <img src="images/save.png" alt="" />
+            </button>
+            <button class="tool-button" title="U_Oأ±U+U1 UcOأ±UOUآ§">
+                <img src="images/print.png" alt="" />
+            </button>
+            <button class="tool-button danger" type="button" title="واپس جائیں" @onclick="GoBack">
+                <img src="images/close.png" alt="" />
+            </button>
+            <button class="tool-button" title="OU_U^UOU1">
+                <img src="images/update.png" alt="" />
+            </button>
+        </aside>
+    </main>
+</div>
+
+@code {
+    private Task GoBack()
+    {
+        return JS.InvokeVoidAsync("missilPolice.goBack", "/").AsTask();
+    }
+}
+
+
+

@@ -1,0 +1,977 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+
+using System.Windows.Forms;
+using System.Windows.Forms.Design;
+using System.Xml.Linq;
+
+using Microsoft.CSharp;
+using System.Data.SQLite;
+
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.ApplicationServices;
+
+
+
+namespace missalpolice
+{
+    [global::Microsoft.VisualBasic.CompilerServices.DesignerGeneratedAttribute()]
+    public partial class FrmCasesNew : global::System.Windows.Forms.Form
+    {
+
+        // Form overrides dispose to clean up the component list.
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        protected override void Dispose(global::System.Boolean disposing)
+        {
+            try
+            {
+                if (((disposing) && this.components is not null))
+                {
+                    this.components.Dispose();
+                }
+            }
+            finally
+            {
+                base.Dispose(disposing);
+            }
+        }
+
+        // Required by the Windows Form Designer
+        private global::System.ComponentModel.IContainer components;
+
+        // NOTE: The following procedure is required by the Windows Form Designer
+        // It can be modified using the Windows Form Designer.  
+        // Do not modify it using the code editor.
+        [global::System.Diagnostics.DebuggerStepThroughAttribute()]
+        private void InitializeComponent()
+        {
+            GroupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            txtmatanfir = new RichTextBox();
+            txtiomobile = new ComboBox();
+            txtmoharrar = new ComboBox();
+            lblmoharrar = new Label();
+            txtstamp = new ComboBox();
+            lblstamp = new Label();
+            txtdistrict = new ComboBox();
+            label19 = new Label();
+            txtdsp = new ComboBox();
+            txtdivisionsp = new ComboBox();
+            label17 = new Label();
+            label18 = new Label();
+            txtvdriver = new ComboBox();
+            label16 = new Label();
+            txtvehicleno = new ComboBox();
+            label15 = new Label();
+            firstatus = new ComboBox();
+            sho = new ComboBox();
+            Label14 = new Label();
+            iofficer = new ComboBox();
+            murasla = new ComboBox();
+            fircnic = new ComboBox();
+            firmobile = new ComboBox();
+            rank = new ComboBox();
+            writer = new ComboBox();
+            offence = new ComboBox();
+            mudai = new ComboBox();
+            ps = new ComboBox();
+            idate = new DateTimePicker();
+            firdate = new DateTimePicker();
+            Label5 = new Label();
+            Label7 = new Label();
+            Label9 = new Label();
+            Label4 = new Label();
+            Label12 = new Label();
+            Label6 = new Label();
+            Label11 = new Label();
+            Label10 = new Label();
+            Label3 = new Label();
+            Label2 = new Label();
+            firno = new TextBox();
+            Label1 = new Label();
+            Label8 = new Label();
+            Label13 = new Label();
+            label21 = new Label();
+            btn_fcn_ext = new Button();
+            btn_update_fcn = new Button();
+            fir_save = new Button();
+            GroupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            SuspendLayout();
+            // 
+            // GroupBox1
+            // 
+            GroupBox1.BackColor = Color.White;
+            GroupBox1.Controls.Add(groupBox2);
+            GroupBox1.Controls.Add(txtiomobile);
+            GroupBox1.Controls.Add(txtmoharrar);
+            GroupBox1.Controls.Add(lblmoharrar);
+            GroupBox1.Controls.Add(txtstamp);
+            GroupBox1.Controls.Add(lblstamp);
+            GroupBox1.Controls.Add(txtdistrict);
+            GroupBox1.Controls.Add(label19);
+            GroupBox1.Controls.Add(txtdsp);
+            GroupBox1.Controls.Add(txtdivisionsp);
+            GroupBox1.Controls.Add(label17);
+            GroupBox1.Controls.Add(label18);
+            GroupBox1.Controls.Add(txtvdriver);
+            GroupBox1.Controls.Add(label16);
+            GroupBox1.Controls.Add(txtvehicleno);
+            GroupBox1.Controls.Add(label15);
+            GroupBox1.Controls.Add(firstatus);
+            GroupBox1.Controls.Add(sho);
+            GroupBox1.Controls.Add(Label14);
+            GroupBox1.Controls.Add(iofficer);
+            GroupBox1.Controls.Add(murasla);
+            GroupBox1.Controls.Add(fircnic);
+            GroupBox1.Controls.Add(firmobile);
+            GroupBox1.Controls.Add(rank);
+            GroupBox1.Controls.Add(writer);
+            GroupBox1.Controls.Add(offence);
+            GroupBox1.Controls.Add(mudai);
+            GroupBox1.Controls.Add(ps);
+            GroupBox1.Controls.Add(idate);
+            GroupBox1.Controls.Add(firdate);
+            GroupBox1.Controls.Add(Label5);
+            GroupBox1.Controls.Add(Label7);
+            GroupBox1.Controls.Add(Label9);
+            GroupBox1.Controls.Add(Label4);
+            GroupBox1.Controls.Add(Label12);
+            GroupBox1.Controls.Add(Label6);
+            GroupBox1.Controls.Add(Label11);
+            GroupBox1.Controls.Add(Label10);
+            GroupBox1.Controls.Add(Label3);
+            GroupBox1.Controls.Add(Label2);
+            GroupBox1.Controls.Add(firno);
+            GroupBox1.Controls.Add(Label1);
+            GroupBox1.Controls.Add(Label8);
+            GroupBox1.Controls.Add(Label13);
+            GroupBox1.Controls.Add(label21);
+            GroupBox1.Location = new Point(4, 3);
+            GroupBox1.Name = "GroupBox1";
+            GroupBox1.Size = new Size(932, 597);
+            GroupBox1.TabIndex = 0;
+            GroupBox1.TabStop = false;
+            GroupBox1.Enter += GroupBox1_Enter;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(txtmatanfir);
+            groupBox2.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox2.Location = new Point(3, 294);
+            groupBox2.Name = "groupBox2";
+            groupBox2.RightToLeft = RightToLeft.Yes;
+            groupBox2.Size = new Size(926, 299);
+            groupBox2.TabIndex = 37;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "متن FIR";
+            // 
+            // txtmatanfir
+            // 
+            txtmatanfir.Dock = DockStyle.Fill;
+            txtmatanfir.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtmatanfir.Location = new Point(3, 36);
+            txtmatanfir.Name = "txtmatanfir";
+            txtmatanfir.RightToLeft = RightToLeft.Yes;
+            txtmatanfir.ScrollBars = RichTextBoxScrollBars.Vertical;
+            txtmatanfir.Size = new Size(920, 260);
+            txtmatanfir.TabIndex = 23;
+            txtmatanfir.Text = "";
+            //txtmatanfir.TextChanged += txtmatanfir_TextChanged;
+            // 
+            // txtiomobile
+            // 
+            txtiomobile.AllowDrop = true;
+            txtiomobile.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtiomobile.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtiomobile.AutoCompleteSource = AutoCompleteSource.ListItems;
+            txtiomobile.DropDownHeight = 150;
+            txtiomobile.DropDownWidth = 80;
+            txtiomobile.FlatStyle = FlatStyle.System;
+            txtiomobile.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtiomobile.FormattingEnabled = true;
+            txtiomobile.IntegralHeight = false;
+            txtiomobile.Location = new Point(440, 157);
+            txtiomobile.Margin = new Padding(3, 3, 5, 3);
+            txtiomobile.MaxDropDownItems = 12;
+            txtiomobile.Name = "txtiomobile";
+            txtiomobile.RightToLeft = RightToLeft.Yes;
+            txtiomobile.Size = new Size(152, 40);
+            txtiomobile.Sorted = true;
+            txtiomobile.TabIndex = 12;
+            // 
+            // txtmoharrar
+            // 
+            txtmoharrar.AllowDrop = true;
+            txtmoharrar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtmoharrar.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtmoharrar.AutoCompleteSource = AutoCompleteSource.ListItems;
+            txtmoharrar.DropDownHeight = 300;
+            txtmoharrar.DropDownWidth = 200;
+            txtmoharrar.FlatStyle = FlatStyle.System;
+            txtmoharrar.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtmoharrar.FormattingEnabled = true;
+            txtmoharrar.IntegralHeight = false;
+            txtmoharrar.Location = new Point(672, 206);
+            txtmoharrar.Margin = new Padding(3, 3, 5, 3);
+            txtmoharrar.MaxDropDownItems = 12;
+            txtmoharrar.Name = "txtmoharrar";
+            txtmoharrar.RightToLeft = RightToLeft.Yes;
+            txtmoharrar.Size = new Size(184, 40);
+            txtmoharrar.Sorted = true;
+            txtmoharrar.TabIndex = 15;
+            // 
+            // lblmoharrar
+            // 
+            lblmoharrar.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblmoharrar.Location = new Point(864, 208);
+            lblmoharrar.Name = "lblmoharrar";
+            lblmoharrar.RightToLeft = RightToLeft.Yes;
+            lblmoharrar.Size = new Size(57, 34);
+            lblmoharrar.TabIndex = 35;
+            lblmoharrar.Text = "محررتھانہ";
+            // 
+            // txtstamp
+            // 
+            txtstamp.AllowDrop = true;
+            txtstamp.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtstamp.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtstamp.AutoCompleteSource = AutoCompleteSource.ListItems;
+            txtstamp.DropDownHeight = 250;
+            txtstamp.DropDownWidth = 80;
+            txtstamp.FlatStyle = FlatStyle.System;
+            txtstamp.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtstamp.FormattingEnabled = true;
+            txtstamp.IntegralHeight = false;
+            txtstamp.Location = new Point(3, 157);
+            txtstamp.Margin = new Padding(3, 3, 5, 3);
+            txtstamp.MaxDropDownItems = 12;
+            txtstamp.Name = "txtstamp";
+            txtstamp.RightToLeft = RightToLeft.Yes;
+            txtstamp.Size = new Size(157, 40);
+            txtstamp.Sorted = true;
+            txtstamp.TabIndex = 14;
+            // 
+            // lblstamp
+            // 
+            lblstamp.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblstamp.Location = new Point(168, 160);
+            lblstamp.Name = "lblstamp";
+            lblstamp.RightToLeft = RightToLeft.Yes;
+            lblstamp.Size = new Size(48, 34);
+            lblstamp.TabIndex = 29;
+            lblstamp.Text = "سربمہر";
+            lblstamp.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtdistrict
+            // 
+            txtdistrict.AllowDrop = true;
+            txtdistrict.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtdistrict.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtdistrict.AutoCompleteSource = AutoCompleteSource.ListItems;
+            txtdistrict.DropDownHeight = 200;
+            txtdistrict.DropDownWidth = 80;
+            txtdistrict.FlatStyle = FlatStyle.System;
+            txtdistrict.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtdistrict.FormattingEnabled = true;
+            txtdistrict.IntegralHeight = false;
+            txtdistrict.Location = new Point(216, 254);
+            txtdistrict.Margin = new Padding(3, 3, 5, 3);
+            txtdistrict.MaxDropDownItems = 12;
+            txtdistrict.Name = "txtdistrict";
+            txtdistrict.RightToLeft = RightToLeft.Yes;
+            txtdistrict.Size = new Size(152, 40);
+            txtdistrict.Sorted = true;
+            txtdistrict.TabIndex = 21;
+            // 
+            // label19
+            // 
+            label19.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.Location = new Point(376, 257);
+            label19.Name = "label19";
+            label19.RightToLeft = RightToLeft.Yes;
+            label19.Size = new Size(58, 34);
+            label19.TabIndex = 28;
+            label19.Text = "ضلع";
+            label19.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtdsp
+            // 
+            txtdsp.AllowDrop = true;
+            txtdsp.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtdsp.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtdsp.AutoCompleteSource = AutoCompleteSource.ListItems;
+            txtdsp.DropDownHeight = 300;
+            txtdsp.DropDownWidth = 200;
+            txtdsp.FlatStyle = FlatStyle.System;
+            txtdsp.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtdsp.FormattingEnabled = true;
+            txtdsp.IntegralHeight = false;
+            txtdsp.Location = new Point(672, 252);
+            txtdsp.Margin = new Padding(3, 3, 5, 3);
+            txtdsp.MaxDropDownItems = 12;
+            txtdsp.Name = "txtdsp";
+            txtdsp.RightToLeft = RightToLeft.Yes;
+            txtdsp.Size = new Size(184, 40);
+            txtdsp.Sorted = true;
+            txtdsp.TabIndex = 19;
+            // 
+            // txtdivisionsp
+            // 
+            txtdivisionsp.AllowDrop = true;
+            txtdivisionsp.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtdivisionsp.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtdivisionsp.AutoCompleteSource = AutoCompleteSource.ListItems;
+            txtdivisionsp.DropDownHeight = 300;
+            txtdivisionsp.DropDownWidth = 200;
+            txtdivisionsp.FlatStyle = FlatStyle.System;
+            txtdivisionsp.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtdivisionsp.FormattingEnabled = true;
+            txtdivisionsp.IntegralHeight = false;
+            txtdivisionsp.Location = new Point(440, 253);
+            txtdivisionsp.Margin = new Padding(3, 3, 5, 3);
+            txtdivisionsp.MaxDropDownItems = 12;
+            txtdivisionsp.Name = "txtdivisionsp";
+            txtdivisionsp.RightToLeft = RightToLeft.Yes;
+            txtdivisionsp.Size = new Size(152, 40);
+            txtdivisionsp.Sorted = true;
+            txtdivisionsp.TabIndex = 20;
+            // 
+            // label17
+            // 
+            label17.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.Location = new Point(624, 253);
+            label17.Name = "label17";
+            label17.RightToLeft = RightToLeft.Yes;
+            label17.Size = new Size(39, 34);
+            label17.TabIndex = 25;
+            label17.Text = "SP";
+            label17.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            label18.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Location = new Point(872, 252);
+            label18.Name = "label18";
+            label18.RightToLeft = RightToLeft.Yes;
+            label18.Size = new Size(50, 34);
+            label18.TabIndex = 23;
+            label18.Text = "DSP";
+            label18.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtvdriver
+            // 
+            txtvdriver.AllowDrop = true;
+            txtvdriver.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtvdriver.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtvdriver.AutoCompleteSource = AutoCompleteSource.ListItems;
+            txtvdriver.DropDownHeight = 300;
+            txtvdriver.DropDownWidth = 200;
+            txtvdriver.FlatStyle = FlatStyle.System;
+            txtvdriver.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtvdriver.FormattingEnabled = true;
+            txtvdriver.IntegralHeight = false;
+            txtvdriver.Location = new Point(216, 205);
+            txtvdriver.Margin = new Padding(3, 3, 5, 3);
+            txtvdriver.MaxDropDownItems = 12;
+            txtvdriver.Name = "txtvdriver";
+            txtvdriver.RightToLeft = RightToLeft.Yes;
+            txtvdriver.Size = new Size(152, 40);
+            txtvdriver.Sorted = true;
+            txtvdriver.TabIndex = 17;
+            // 
+            // label16
+            // 
+            label16.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(608, 206);
+            label16.Name = "label16";
+            label16.RightToLeft = RightToLeft.Yes;
+            label16.Size = new Size(53, 34);
+            label16.TabIndex = 22;
+            label16.Text = "SHO";
+            label16.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtvehicleno
+            // 
+            txtvehicleno.AllowDrop = true;
+            txtvehicleno.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtvehicleno.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtvehicleno.AutoCompleteSource = AutoCompleteSource.ListItems;
+            txtvehicleno.DropDownHeight = 300;
+            txtvehicleno.DropDownWidth = 200;
+            txtvehicleno.FlatStyle = FlatStyle.System;
+            txtvehicleno.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtvehicleno.FormattingEnabled = true;
+            txtvehicleno.IntegralHeight = false;
+            txtvehicleno.Location = new Point(3, 205);
+            txtvehicleno.Margin = new Padding(3, 3, 5, 3);
+            txtvehicleno.MaxDropDownItems = 12;
+            txtvehicleno.Name = "txtvehicleno";
+            txtvehicleno.RightToLeft = RightToLeft.Yes;
+            txtvehicleno.Size = new Size(157, 40);
+            txtvehicleno.Sorted = true;
+            txtvehicleno.TabIndex = 18;
+            // 
+            // label15
+            // 
+            label15.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Location = new Point(160, 205);
+            label15.Name = "label15";
+            label15.RightToLeft = RightToLeft.Yes;
+            label15.Size = new Size(56, 34);
+            label15.TabIndex = 20;
+            label15.Text = "گاڑی نمبر";
+            label15.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // firstatus
+            // 
+            firstatus.AllowDrop = true;
+            firstatus.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            firstatus.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            firstatus.DropDownHeight = 250;
+            firstatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            firstatus.DropDownWidth = 80;
+            firstatus.FlatStyle = FlatStyle.System;
+            firstatus.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            firstatus.FormattingEnabled = true;
+            firstatus.IntegralHeight = false;
+            firstatus.ItemHeight = 32;
+            firstatus.Items.AddRange(new object[] { "اخراج", "تفتیش تبدیل", "چالان", "زیر تفتیش", "عدم پتہ", "نامکمل چالان" });
+            firstatus.Location = new Point(3, 253);
+            firstatus.Margin = new Padding(3, 3, 5, 3);
+            firstatus.MaxDropDownItems = 12;
+            firstatus.Name = "firstatus";
+            firstatus.RightToLeft = RightToLeft.Yes;
+            firstatus.Size = new Size(157, 40);
+            firstatus.Sorted = true;
+            firstatus.TabIndex = 22;
+            // 
+            // sho
+            // 
+            sho.AllowDrop = true;
+            sho.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            sho.AutoCompleteMode = AutoCompleteMode.Suggest;
+            sho.AutoCompleteSource = AutoCompleteSource.ListItems;
+            sho.DropDownHeight = 250;
+            sho.DropDownWidth = 200;
+            sho.FlatStyle = FlatStyle.System;
+            sho.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            sho.FormattingEnabled = true;
+            sho.IntegralHeight = false;
+            sho.Location = new Point(440, 205);
+            sho.Margin = new Padding(3, 3, 5, 3);
+            sho.MaxDropDownItems = 12;
+            sho.Name = "sho";
+            sho.RightToLeft = RightToLeft.Yes;
+            sho.Size = new Size(152, 40);
+            sho.Sorted = true;
+            sho.TabIndex = 16;
+            // 
+            // Label14
+            // 
+            Label14.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label14.Location = new Point(384, 205);
+            Label14.Name = "Label14";
+            Label14.RightToLeft = RightToLeft.Yes;
+            Label14.Size = new Size(47, 34);
+            Label14.TabIndex = 18;
+            Label14.Text = "ڈرائیور";
+            Label14.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // iofficer
+            // 
+            iofficer.AllowDrop = true;
+            iofficer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            iofficer.AutoCompleteMode = AutoCompleteMode.Suggest;
+            iofficer.AutoCompleteSource = AutoCompleteSource.ListItems;
+            iofficer.DropDownHeight = 300;
+            iofficer.DropDownWidth = 200;
+            iofficer.FlatStyle = FlatStyle.System;
+            iofficer.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            iofficer.FormattingEnabled = true;
+            iofficer.IntegralHeight = false;
+            iofficer.Location = new Point(672, 156);
+            iofficer.Margin = new Padding(3, 3, 5, 3);
+            iofficer.MaxDropDownItems = 12;
+            iofficer.Name = "iofficer";
+            iofficer.RightToLeft = RightToLeft.Yes;
+            iofficer.Size = new Size(184, 40);
+            iofficer.Sorted = true;
+            iofficer.TabIndex = 11;
+            // 
+            // murasla
+            // 
+            murasla.AllowDrop = true;
+            murasla.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            murasla.AutoCompleteMode = AutoCompleteMode.Suggest;
+            murasla.AutoCompleteSource = AutoCompleteSource.ListItems;
+            murasla.DropDownHeight = 300;
+            murasla.DropDownWidth = 200;
+            murasla.FlatStyle = FlatStyle.System;
+            murasla.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            murasla.FormattingEnabled = true;
+            murasla.IntegralHeight = false;
+            murasla.Location = new Point(216, 110);
+            murasla.Margin = new Padding(3, 3, 5, 3);
+            murasla.MaxDropDownItems = 12;
+            murasla.Name = "murasla";
+            murasla.RightToLeft = RightToLeft.Yes;
+            murasla.Size = new Size(152, 40);
+            murasla.Sorted = true;
+            murasla.TabIndex = 9;
+            // 
+            // fircnic
+            // 
+            fircnic.AllowDrop = true;
+            fircnic.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            fircnic.AutoCompleteMode = AutoCompleteMode.Suggest;
+            fircnic.AutoCompleteSource = AutoCompleteSource.ListItems;
+            fircnic.DropDownHeight = 150;
+            fircnic.DropDownWidth = 80;
+            fircnic.FlatStyle = FlatStyle.System;
+            fircnic.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            fircnic.FormattingEnabled = true;
+            fircnic.IntegralHeight = false;
+            fircnic.Location = new Point(3, 63);
+            fircnic.Margin = new Padding(3, 3, 5, 3);
+            fircnic.MaxDropDownItems = 12;
+            fircnic.Name = "fircnic";
+            fircnic.RightToLeft = RightToLeft.Yes;
+            fircnic.Size = new Size(157, 40);
+            fircnic.Sorted = true;
+            fircnic.TabIndex = 7;
+            // 
+            // firmobile
+            // 
+            firmobile.AllowDrop = true;
+            firmobile.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            firmobile.AutoCompleteMode = AutoCompleteMode.Suggest;
+            firmobile.AutoCompleteSource = AutoCompleteSource.ListItems;
+            firmobile.DropDownHeight = 150;
+            firmobile.DropDownWidth = 80;
+            firmobile.FlatStyle = FlatStyle.System;
+            firmobile.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            firmobile.FormattingEnabled = true;
+            firmobile.IntegralHeight = false;
+            firmobile.Location = new Point(216, 63);
+            firmobile.Margin = new Padding(3, 3, 5, 3);
+            firmobile.MaxDropDownItems = 12;
+            firmobile.Name = "firmobile";
+            firmobile.RightToLeft = RightToLeft.Yes;
+            firmobile.Size = new Size(152, 40);
+            firmobile.Sorted = true;
+            firmobile.TabIndex = 6;
+            // 
+            // rank
+            // 
+            rank.AllowDrop = true;
+            rank.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            rank.AutoCompleteMode = AutoCompleteMode.Suggest;
+            rank.AutoCompleteSource = AutoCompleteSource.ListItems;
+            rank.DropDownHeight = 150;
+            rank.DropDownWidth = 80;
+            rank.FlatStyle = FlatStyle.System;
+            rank.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            rank.FormattingEnabled = true;
+            rank.IntegralHeight = false;
+            rank.Location = new Point(216, 157);
+            rank.Margin = new Padding(3, 3, 5, 3);
+            rank.MaxDropDownItems = 12;
+            rank.Name = "rank";
+            rank.RightToLeft = RightToLeft.Yes;
+            rank.Size = new Size(152, 40);
+            rank.Sorted = true;
+            rank.TabIndex = 13;
+            // 
+            // writer
+            // 
+            writer.AllowDrop = true;
+            writer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            writer.AutoCompleteMode = AutoCompleteMode.Suggest;
+            writer.AutoCompleteSource = AutoCompleteSource.ListItems;
+            writer.DropDownHeight = 300;
+            writer.DropDownWidth = 200;
+            writer.FlatStyle = FlatStyle.System;
+            writer.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            writer.FormattingEnabled = true;
+            writer.IntegralHeight = false;
+            writer.Location = new Point(3, 110);
+            writer.Margin = new Padding(3, 3, 5, 3);
+            writer.MaxDropDownItems = 12;
+            writer.Name = "writer";
+            writer.RightToLeft = RightToLeft.Yes;
+            writer.Size = new Size(157, 40);
+            writer.Sorted = true;
+            writer.TabIndex = 10;
+            // 
+            // offence
+            // 
+            offence.AllowDrop = true;
+            offence.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            offence.AutoCompleteMode = AutoCompleteMode.Suggest;
+            offence.AutoCompleteSource = AutoCompleteSource.ListItems;
+            offence.DropDownHeight = 300;
+            offence.DropDownWidth = 100;
+            offence.FlatStyle = FlatStyle.System;
+            offence.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            offence.FormattingEnabled = true;
+            offence.IntegralHeight = false;
+            offence.Location = new Point(440, 109);
+            offence.Margin = new Padding(3, 3, 5, 3);
+            offence.MaxDropDownItems = 12;
+            offence.Name = "offence";
+            offence.RightToLeft = RightToLeft.Yes;
+            offence.Size = new Size(416, 40);
+            offence.Sorted = true;
+            offence.TabIndex = 8;
+            // 
+            // mudai
+            // 
+            mudai.AllowDrop = true;
+            mudai.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            mudai.AutoCompleteMode = AutoCompleteMode.Suggest;
+            mudai.AutoCompleteSource = AutoCompleteSource.ListItems;
+            mudai.DropDownHeight = 400;
+            mudai.DropDownWidth = 400;
+            mudai.FlatStyle = FlatStyle.System;
+            mudai.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            mudai.FormattingEnabled = true;
+            mudai.IntegralHeight = false;
+            mudai.Location = new Point(440, 62);
+            mudai.Margin = new Padding(3, 3, 5, 3);
+            mudai.MaxDropDownItems = 12;
+            mudai.Name = "mudai";
+            mudai.RightToLeft = RightToLeft.Yes;
+            mudai.Size = new Size(416, 40);
+            mudai.Sorted = true;
+            mudai.TabIndex = 5;
+            // 
+            // ps
+            // 
+            ps.AllowDrop = true;
+            ps.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ps.AutoCompleteMode = AutoCompleteMode.Suggest;
+            ps.AutoCompleteSource = AutoCompleteSource.ListItems;
+            ps.DropDownHeight = 200;
+            ps.DropDownWidth = 80;
+            ps.FlatStyle = FlatStyle.System;
+            ps.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ps.FormattingEnabled = true;
+            ps.IntegralHeight = false;
+            ps.Location = new Point(3, 14);
+            ps.Margin = new Padding(3, 3, 5, 3);
+            ps.MaxDropDownItems = 12;
+            ps.Name = "ps";
+            ps.RightToLeft = RightToLeft.Yes;
+            ps.Size = new Size(157, 40);
+            ps.Sorted = true;
+            ps.TabIndex = 4;
+            // 
+            // idate
+            // 
+            idate.Cursor = Cursors.Hand;
+            idate.CustomFormat = "22-10-24";
+            idate.Font = new Font("Jameel Noori Nastaleeq", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            idate.Format = DateTimePickerFormat.Custom;
+            idate.Location = new Point(216, 15);
+            idate.Name = "idate";
+            idate.RightToLeft = RightToLeft.No;
+            idate.RightToLeftLayout = true;
+            idate.Size = new Size(152, 43);
+            idate.TabIndex = 3;
+            idate.Value = new DateTime(2024, 10, 21, 0, 0, 0, 0);
+            // 
+            // firdate
+            // 
+            firdate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            firdate.CalendarFont = new Font("Jameel Noori Nastaleeq", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            firdate.Cursor = Cursors.Hand;
+            firdate.CustomFormat = "22-10-24";
+            firdate.Font = new Font("Jameel Noori Nastaleeq", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            firdate.Format = DateTimePickerFormat.Custom;
+            firdate.Location = new Point(440, 14);
+            firdate.Name = "firdate";
+            firdate.RightToLeft = RightToLeft.No;
+            firdate.RightToLeftLayout = true;
+            firdate.Size = new Size(152, 43);
+            firdate.TabIndex = 2;
+            firdate.Value = new DateTime(2024, 10, 22, 0, 0, 0, 0);
+            // 
+            // Label5
+            // 
+            Label5.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label5.Location = new Point(872, 110);
+            Label5.Name = "Label5";
+            Label5.RightToLeft = RightToLeft.Yes;
+            Label5.Size = new Size(52, 34);
+            Label5.TabIndex = 17;
+            Label5.Text = "جرم";
+            Label5.Click += Label5_Click;
+            // 
+            // Label7
+            // 
+            Label7.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label7.Location = new Point(375, 159);
+            Label7.Name = "Label7";
+            Label7.RightToLeft = RightToLeft.Yes;
+            Label7.Size = new Size(50, 34);
+            Label7.TabIndex = 16;
+            Label7.Text = "عہدہ";
+            Label7.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // Label9
+            // 
+            Label9.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label9.Location = new Point(855, 158);
+            Label9.Name = "Label9";
+            Label9.RightToLeft = RightToLeft.Yes;
+            Label9.Size = new Size(74, 34);
+            Label9.TabIndex = 12;
+            Label9.Text = "تفتیشی آفیسر";
+            // 
+            // Label4
+            // 
+            Label4.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label4.Location = new Point(157, 63);
+            Label4.Name = "Label4";
+            Label4.RightToLeft = RightToLeft.Yes;
+            Label4.Size = new Size(58, 34);
+            Label4.TabIndex = 10;
+            Label4.Text = "شناختی کارڈ";
+            // 
+            // Label12
+            // 
+            Label12.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label12.Location = new Point(364, 110);
+            Label12.Name = "Label12";
+            Label12.RightToLeft = RightToLeft.Yes;
+            Label12.Size = new Size(72, 34);
+            Label12.TabIndex = 6;
+            Label12.Text = "مرتبہ مرسلہ";
+            // 
+            // Label6
+            // 
+            Label6.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label6.Location = new Point(856, 62);
+            Label6.Name = "Label6";
+            Label6.RightToLeft = RightToLeft.Yes;
+            Label6.Size = new Size(68, 34);
+            Label6.TabIndex = 6;
+            Label6.Text = "مدعی مقدمہ";
+            // 
+            // Label11
+            // 
+            Label11.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label11.Location = new Point(367, 63);
+            Label11.Name = "Label11";
+            Label11.RightToLeft = RightToLeft.Yes;
+            Label11.Size = new Size(71, 34);
+            Label11.TabIndex = 4;
+            Label11.Text = "موبائل نمبر";
+            // 
+            // Label10
+            // 
+            Label10.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label10.Location = new Point(168, 17);
+            Label10.Name = "Label10";
+            Label10.RightToLeft = RightToLeft.Yes;
+            Label10.Size = new Size(38, 34);
+            Label10.TabIndex = 4;
+            Label10.Text = "تھانہ";
+            // 
+            // Label3
+            // 
+            Label3.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label3.Location = new Point(368, 19);
+            Label3.Name = "Label3";
+            Label3.RightToLeft = RightToLeft.Yes;
+            Label3.Size = new Size(72, 34);
+            Label3.TabIndex = 4;
+            Label3.Text = "تاریخ وقوعہ";
+            // 
+            // Label2
+            // 
+            Label2.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label2.Location = new Point(608, 17);
+            Label2.Name = "Label2";
+            Label2.RightToLeft = RightToLeft.Yes;
+            Label2.Size = new Size(59, 34);
+            Label2.TabIndex = 2;
+            Label2.Text = "مورخہ:";
+            // 
+            // firno
+            // 
+            firno.BorderStyle = BorderStyle.FixedSingle;
+            firno.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            firno.Location = new Point(672, 14);
+            firno.Name = "firno";
+            firno.RightToLeft = RightToLeft.Yes;
+            firno.Size = new Size(184, 40);
+            firno.TabIndex = 1;
+            firno.TextAlign = HorizontalAlignment.Center;
+            // 
+            // Label1
+            // 
+            Label1.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label1.Location = new Point(856, 17);
+            Label1.Name = "Label1";
+            Label1.RightToLeft = RightToLeft.Yes;
+            Label1.Size = new Size(68, 34);
+            Label1.TabIndex = 0;
+            Label1.Text = "مقدمہ نمبر";
+            // 
+            // Label8
+            // 
+            Label8.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label8.Location = new Point(160, 257);
+            Label8.Margin = new Padding(1, 0, 2, 0);
+            Label8.Name = "Label8";
+            Label8.RightToLeft = RightToLeft.Yes;
+            Label8.Size = new Size(51, 34);
+            Label8.TabIndex = 14;
+            Label8.Text = "مقدمہ";
+            // 
+            // Label13
+            // 
+            Label13.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label13.Location = new Point(156, 111);
+            Label13.Name = "Label13";
+            Label13.RightToLeft = RightToLeft.Yes;
+            Label13.Size = new Size(64, 34);
+            Label13.TabIndex = 6;
+            Label13.Text = "تحریر کنندہ";
+            // 
+            // label21
+            // 
+            label21.Font = new Font("Jameel Noori Nastaleeq", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.Location = new Point(592, 159);
+            label21.Name = "label21";
+            label21.RightToLeft = RightToLeft.Yes;
+            label21.Size = new Size(79, 34);
+            label21.TabIndex = 36;
+            label21.Text = "تفتیشی موبائل";
+            // 
+            // btn_fcn_ext
+            // 
+            btn_fcn_ext.BackColor = Color.White;
+            btn_fcn_ext.FlatAppearance.BorderSize = 0;
+            btn_fcn_ext.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btn_fcn_ext.FlatStyle = FlatStyle.Flat;
+            btn_fcn_ext.Font = new Font("Jameel Noori Nastaleeq", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_fcn_ext.Location = new Point(219, 602);
+            btn_fcn_ext.Name = "btn_fcn_ext";
+            btn_fcn_ext.RightToLeft = RightToLeft.Yes;
+            btn_fcn_ext.Size = new Size(100, 50);
+            btn_fcn_ext.TabIndex = 25;
+            btn_fcn_ext.TextAlign = ContentAlignment.MiddleLeft;
+            btn_fcn_ext.UseVisualStyleBackColor = false;
+            // 
+            // btn_update_fcn
+            // 
+            btn_update_fcn.BackColor = Color.White;
+            btn_update_fcn.FlatAppearance.BorderSize = 0;
+            btn_update_fcn.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btn_update_fcn.FlatStyle = FlatStyle.Flat;
+            btn_update_fcn.Font = new Font("Jameel Noori Nastaleeq", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_update_fcn.Location = new Point(440, 602);
+            btn_update_fcn.Name = "btn_update_fcn";
+            btn_update_fcn.Size = new Size(100, 50);
+            btn_update_fcn.TabIndex = 27;
+            btn_update_fcn.TextAlign = ContentAlignment.MiddleRight;
+            btn_update_fcn.UseVisualStyleBackColor = false;
+            // 
+            // fir_save
+            // 
+            fir_save.BackColor = Color.White;
+            fir_save.FlatAppearance.BorderSize = 0;
+            fir_save.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            fir_save.FlatStyle = FlatStyle.Flat;
+            fir_save.Font = new Font("Jameel Noori Nastaleeq", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            fir_save.Location = new Point(477, 602);
+            fir_save.Name = "fir_save";
+            fir_save.RightToLeft = RightToLeft.Yes;
+            fir_save.Size = new Size(100, 50);
+            fir_save.TabIndex = 24;
+            fir_save.TextAlign = ContentAlignment.MiddleLeft;
+            fir_save.UseVisualStyleBackColor = false;
+            // 
+            // FrmCasesNew
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(939, 669);
+            ControlBox = false;
+            Controls.Add(btn_fcn_ext);
+            Controls.Add(btn_update_fcn);
+            Controls.Add(fir_save);
+            Controls.Add(GroupBox1);
+            Name = "FrmCasesNew";
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += FrmCasesNew_Load;
+            GroupBox1.ResumeLayout(false);
+            GroupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            ResumeLayout(false);
+        }
+
+        internal global::System.Windows.Forms.GroupBox GroupBox1;
+        internal global::System.Windows.Forms.TextBox firno;
+        internal global::System.Windows.Forms.Label Label1;
+        internal global::System.Windows.Forms.Label Label7;
+        internal global::System.Windows.Forms.Label Label8;
+        internal global::System.Windows.Forms.Label Label9;
+        internal global::System.Windows.Forms.Label Label4;
+        internal global::System.Windows.Forms.Label Label13;
+        internal global::System.Windows.Forms.Label Label12;
+        internal global::System.Windows.Forms.Label Label6;
+        internal global::System.Windows.Forms.Label Label11;
+        internal global::System.Windows.Forms.Label Label10;
+        internal global::System.Windows.Forms.Label Label3;
+        internal global::System.Windows.Forms.Label Label2;
+        internal global::System.Windows.Forms.Label Label5;
+        internal global::System.Windows.Forms.DateTimePicker idate;
+        internal global::System.Windows.Forms.DateTimePicker firdate;
+        internal global::System.Windows.Forms.ComboBox ps;
+        internal global::System.Windows.Forms.ComboBox iofficer;
+        internal global::System.Windows.Forms.ComboBox murasla;
+        internal global::System.Windows.Forms.ComboBox fircnic;
+        internal global::System.Windows.Forms.ComboBox firmobile;
+        internal global::System.Windows.Forms.ComboBox rank;
+        internal global::System.Windows.Forms.ComboBox writer;
+        internal global::System.Windows.Forms.ComboBox offence;
+        internal global::System.Windows.Forms.ComboBox mudai;
+        internal global::System.Windows.Forms.ComboBox sho;
+        internal global::System.Windows.Forms.Label Label14;
+        internal global::System.Windows.Forms.ComboBox firstatus;
+        internal ComboBox txtvdriver;
+        internal Label label16;
+        internal ComboBox txtvehicleno;
+        internal Label label15;
+        internal ComboBox txtdsp;
+        internal ComboBox txtdivisionsp;
+        internal Label label17;
+        internal Label label18;
+        internal ComboBox txtdistrict;
+        internal Label label19;
+        internal Label lblstamp;
+        internal ComboBox txtstamp;
+        private RichTextBox txtmatanfir;
+        internal ComboBox txtmoharrar;
+        internal Label lblmoharrar;
+        private Button btn_fcn_ext;
+        private Button btn_update_fcn;
+        private Button fir_save;
+        internal ComboBox txtiomobile;
+        internal Label label21;
+        private GroupBox groupBox2;
+    }
+}

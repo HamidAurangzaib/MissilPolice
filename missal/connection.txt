@@ -1,0 +1,30 @@
+public static void CON()
+{
+    try
+    {
+        if (CN.State == ConnectionState.Open)
+            CN.Close();
+        CN = new SQLiteConnection(@"Data Source=C:\dbase\DB.sqlite; Version=3; Pooling=True; Timeout=50;");
+        CN.Open();
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Connection Error: " + ex.Message);
+    }
+}
+
+public static void CON_Specimen()
+{
+    try
+    {
+        if (SpecimenCN.State == ConnectionState.Open)
+            SpecimenCN.Close();
+
+        SpecimenCN = new SQLiteConnection(@"Data Source=C:\dbase\Specimen.sqlite; Version=3; Pooling=True; Timeout=50;");
+        SpecimenCN.Open();
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Connection Error (Specimen DB): " + ex.Message);
+    }
+}

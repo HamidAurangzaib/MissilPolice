@@ -1,0 +1,94 @@
+﻿@page "/case-new"
+@layout Layout.FullScreenLayout
+@inject IJSRuntime JS
+
+<div class="case-new-screen" dir="rtl">
+    <header class="form-header">
+        <h1>نیا مقدمہ درج کریں</h1>
+        <span>نئی درخواست</span>
+    </header>
+
+    <section class="case-form">
+        <div class="form-grid">
+            <label>مقدمہ نمبر</label>
+            <input type="text" placeholder="25/25" />
+
+            <label>تاریخ وقوعہ</label>
+            <input type="date" />
+
+            <label>تاریخ رپورٹ</label>
+            <input type="date" />
+
+            <label>نام مدعی</label>
+            <input type="text" />
+
+            <label>مقام وقوعہ</label>
+            <input type="text" />
+
+            <label>دفعات</label>
+            <input type="text" />
+
+            <label>نام ملزم</label>
+            <input type="text" />
+
+            <label>ولدیت</label>
+            <input type="text" />
+
+            <label>قوم</label>
+            <input type="text" />
+
+            <label>شناختی کارڈ نمبر</label>
+            <input type="text" />
+
+            <label>عمر</label>
+            <input type="text" />
+
+            <label>تھانہ</label>
+            <input type="text" />
+
+            <label>تفتیشی افسر</label>
+            <input type="text" />
+
+            <label>رابطہ نمبر</label>
+            <input type="text" />
+
+            <label>SHO</label>
+            <input type="text" />
+
+            <label>DSP</label>
+            <input type="text" />
+
+            <label>SP</label>
+            <input type="text" />
+
+            <label>نوٹ</label>
+            <input type="text" />
+        </div>
+
+        <div class="form-textarea">
+            <label>متن ایف آئی آر</label>
+            <textarea rows="8" placeholder="یہاں ایف آئی آر کا متن درج کریں"></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button class="round-button danger" type="button" title="واپس جائیں" @onclick="GoBack">
+                <img src="images/close.png" alt="" />
+            </button>
+            <button class="round-button" type="button" title="محفوظ کریں">
+                <img src="images/save.png" alt="" />
+            </button>
+        </div>
+    </section>
+</div>
+
+@code {
+    private Task GoBack()
+    {
+        return JS.InvokeVoidAsync("missilPolice.goBack", "/").AsTask();
+    }
+}
+
+
+
+
+

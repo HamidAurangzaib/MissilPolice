@@ -1,0 +1,140 @@
+﻿@page "/"
+@layout Layout.FullScreenLayout
+
+<div class="dashboard-screen" dir="rtl">
+    <header class="topbar">
+        <div class="brand">missalpolice</div>
+        <div class="top-actions">
+            <span>مشعل پولیس</span>
+            <span>ایف آئی آر تلاش</span>
+            <span>مرکزی ڈیش بورڈ</span>
+        </div>
+    </header>
+
+    <div class="dashboard-body">
+        <section class="main-panel">
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">تبدیلی تفتیش</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">منسوخ</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">غیر دریافت</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">زیر تفتیش</div>
+                </div>
+                <div class="stat-connector"></div>
+                <div class="stat-card">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">کل مقدمات</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">درج مقدمات</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">512</div>
+                    <div class="stat-label">چالان 512</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">چالان</div>
+                </div>
+            </div>
+
+            <div class="search-row">
+                <div class="timestamp">09 Dec 2025 - Tuesday - 03:30 PM</div>
+                <div class="search-box">
+                    <input type="text" placeholder="کیس تلاش کریں" aria-label="کیس تلاش کریں" />
+                    <button type="button" title="تلاش">
+                        <span class="icon icon-search" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="case-table" aria-label="فہرست مقدمات">
+                    <thead>
+                        <tr>
+                            <th>نوع مقدمہ</th>
+                            <th>مدعی</th>
+                            <th>نام ملزم</th>
+                            <th>مقام وقوعہ</th>
+                            <th>دفعات</th>
+                            <th>تاریخ جرم</th>
+                            <th>ایف آئی آر</th>
+                            <th>عمل</th>
+                            <th>نمبر</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="selected">
+                            <td>روڈ حادثہ</td>
+                            <td>نامعلوم</td>
+                            <td>نامعلوم</td>
+                            <td>گاؤں کے قریب</td>
+                            <td>تعزیرات</td>
+                            <td>18.11.2025</td>
+                            <td>25/25</td>
+                            <td>
+                                <button class="icon icon-refresh" title="اپڈیٹ" aria-label="اپڈیٹ"></button>
+                            </td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <aside class="side-panel">
+            <div class="logo-card">
+                <div class="logo-mark" aria-hidden="true">
+                    <svg viewBox="0 0 120 140" role="presentation">
+                        <path fill="#1890ff" d="M85 10H38c-6 0-11 5-11 11v98c0 6 5 11 11 11h56V28z" />
+                        <path fill="#f89c1b" d="M85 10v18c0 5 4 9 9 9h10z" />
+                        <path fill="#fff" d="M62 45c-10 0-18 8-18 18 0 8 5 15 13 17l5 12 5-12c8-2 13-9 13-17 0-10-8-18-18-18zm0 25c-4 0-7-3-7-7s3-7 7-7 7 3 7 7-3 7-7 7z" />
+                        <path fill="#f89c1b" d="M52 82h20v8H52z" />
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-title">مشعل پولیس</div>
+                    <div class="logo-subtitle">MISSAIL POLICE</div>
+                </div>
+            </div>
+
+            <div class="side-actions">
+                <NavLink class="side-action primary" href="case-new">
+                    <span class="icon">+</span>
+                    <span>نیا مقدمہ درج کریں</span>
+                </NavLink>
+                <button class="side-action" type="button">
+                    <span class="icon icon-refresh"></span>
+                    <span>فہرست مقدمات ریفریش</span>
+                </button>
+                <NavLink class="side-action" href="summary">
+                    <span class="icon">+</span>
+                    <span>تفصیل مقدمہ</span>
+                </NavLink>
+                <NavLink class="side-action" href="zext">
+                    <span class="icon">i</span>
+                    <span>اضافی معلومات</span>
+                </NavLink>
+                <button class="side-action ghost" type="button">
+                    <span class="icon">≡</span>
+                    <span>انتظامی اختیارات</span>
+                </button>
+            </div>
+        </aside>
+    </div>
+</div>
+
+
+
+
