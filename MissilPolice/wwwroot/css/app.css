@@ -396,8 +396,13 @@ h1:focus {
         flex-direction: column;
     }
 
+    .main-panel {
+        order: 1;
+    }
+
     .side-panel {
         width: 100%;
+        order: 2;
     }
 
     .stat-card {

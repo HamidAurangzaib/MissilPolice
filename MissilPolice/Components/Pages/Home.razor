@@ -1,5 +1,8 @@
 ﻿@page "/"
 @layout Layout.FullScreenLayout
+@using MissilPolice.Models
+@using MissilPolice.Services
+@inject CaseService CaseService
 
 <div class="dashboard-screen" dir="rtl">
     <header class="topbar">
@@ -12,87 +15,6 @@
     </header>
 
     <div class="dashboard-body">
-        <section class="main-panel">
-            <div class="stats-row">
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
-                    <div class="stat-label">تبدیلی تفتیش</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
-                    <div class="stat-label">منسوخ</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
-                    <div class="stat-label">غیر دریافت</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">1</div>
-                    <div class="stat-label">زیر تفتیش</div>
-                </div>
-                <div class="stat-connector"></div>
-                <div class="stat-card">
-                    <div class="stat-value">1</div>
-                    <div class="stat-label">کل مقدمات</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
-                    <div class="stat-label">درج مقدمات</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">512</div>
-                    <div class="stat-label">چالان 512</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
-                    <div class="stat-label">چالان</div>
-                </div>
-            </div>
-
-            <div class="search-row">
-                <div class="timestamp">09 Dec 2025 - Tuesday - 03:30 PM</div>
-                <div class="search-box">
-                    <input type="text" placeholder="کیس تلاش کریں" aria-label="کیس تلاش کریں" />
-                    <button type="button" title="تلاش">
-                        <span class="icon icon-search" aria-hidden="true"></span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="table-wrapper">
-                <table class="case-table" aria-label="فہرست مقدمات">
-                    <thead>
-                        <tr>
-                            <th>نوع مقدمہ</th>
-                            <th>مدعی</th>
-                            <th>نام ملزم</th>
-                            <th>مقام وقوعہ</th>
-                            <th>دفعات</th>
-                            <th>تاریخ جرم</th>
-                            <th>ایف آئی آر</th>
-                            <th>عمل</th>
-                            <th>نمبر</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="selected">
-                            <td>روڈ حادثہ</td>
-                            <td>نامعلوم</td>
-                            <td>نامعلوم</td>
-                            <td>گاؤں کے قریب</td>
-                            <td>تعزیرات</td>
-                            <td>18.11.2025</td>
-                            <td>25/25</td>
-                            <td>
-                                <button class="icon icon-refresh" title="اپڈیٹ" aria-label="اپڈیٹ"></button>
-                            </td>
-                            <td>1</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
         <aside class="side-panel">
             <div class="logo-card">
                 <div class="logo-mark" aria-hidden="true">
@@ -132,8 +54,131 @@
                 </button>
             </div>
         </aside>
+
+        <section class="main-panel">
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">تبدیلی تفتیش</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">منسوخ</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">غیر دریافت</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">@(cases?.Count ?? 0)</div>
+                    <div class="stat-label">زیر تفتیش</div>
+                </div>
+                <div class="stat-connector"></div>
+                <div class="stat-card">
+                    <div class="stat-value">@(cases?.Count ?? 0)</div>
+                    <div class="stat-label">کل مقدمات</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">درج مقدمات</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">512</div>
+                    <div class="stat-label">چالان 512</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">چالان</div>
+                </div>
+            </div>
+
+            <div class="search-row">
+                <div class="timestamp">@DateTime.Now.ToString("dd MMM yyyy - dddd - hh:mm tt")</div>
+                <div class="search-box">
+                    <input type="text" placeholder="کیس تلاش کریں" aria-label="کیس تلاش کریں" />
+                    <button type="button" title="تلاش">
+                        <span class="icon icon-search" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="case-table" aria-label="فہرست مقدمات">
+                    <thead>
+                        <tr>
+                            <th>نوع مقدمہ</th>
+                            <th>مدعی</th>
+                            <th>نام ملزم</th>
+                            <th>مقام وقوعہ</th>
+                            <th>دفعات</th>
+                            <th>تاریخ جرم</th>
+                            <th>ایف آئی آر</th>
+                            <th>عمل</th>
+                            <th>نمبر</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (cases == null)
+                        {
+                             <tr><td colspan="9" style="text-align:center; padding: 20px;">Loading data...</td></tr>
+                        }
+                        else if (!cases.Any())
+                        {
+                             <tr><td colspan="9" style="text-align:center; padding: 20px;">No cases found.</td></tr>
+                        }
+                        else
+                        {
+                            @foreach (var item in cases)
+                            {
+                                <tr class="@(selectedCase == item ? "selected" : "")" @onclick="() => SelectCase(item)">
+                                    <td>@(item.OFFENCE ?? "-")</td>
+                                    <td>@(item.MUDAI ?? "-")</td>
+                                    <td>
+                                        @if(item.AccusedList != null && item.AccusedList.Any())
+                                        {
+                                            @string.Join(", ", item.AccusedList.Select(a => a.ACCNAME))
+                                        }
+                                        else 
+                                        { 
+                                            <span>نامعلوم</span> 
+                                        }
+                                    </td>
+                                    <td>@(item.PS ?? "-")</td>
+                                    <td>@(item.OFFENCE ?? "-")</td>
+                                    <td>@(item.IDATE ?? item.FIRDATE)</td>
+                                    <td>@(item.FIRNO ?? "-")</td>
+                                    <td>
+                                        <button class="icon icon-refresh" title="اپڈیٹ" aria-label="اپڈیٹ"></button>
+                                    </td>
+                                    <td>@item.FIRID</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </div>
 </div>
+
+@code {
+    private List<Fir> cases;
+    private Fir selectedCase;
+
+    protected override async Task OnInitializedAsync()
+    {
+        cases = await CaseService.GetRecentCasesAsync();
+        if (cases.Any())
+        {
+            selectedCase = cases.First();
+        }
+    }
+    
+    private void SelectCase(Fir item)
+    {
+        selectedCase = item;
+    }
+}
 
 
 
