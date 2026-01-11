@@ -1,148 +1,281 @@
 ﻿@page "/summary"
 @layout Layout.FullScreenLayout
+@using MissilPolice.Models
+@using MissilPolice.Services
+@inject CaseService CaseService
 
 <div class="summary-screen" dir="rtl">
     <header class="summary-title">
         <h1>تفصیل مقدمہ</h1>
-        <span>25/25 ایف آئی آر</span>
+        @* Dynamic FIR info or static as per screenshot requirements *@
+        <span>25/25 FIR تفصیل</span>
     </header>
 
-    <section class="summary-panels">
-        <div class="summary-group">
-            <div class="group-title">فارم لسٹ</div>
-            <div class="summary-grid">
-                <div class="summary-item">
-                    <img src="images/info.png" alt="" />
-                    <span>سی ڈی آر</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/save.png" alt="" />
-                    <span>اجتماعی رپورٹ</span>
-                    <strong>0.75</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/update.png" alt="" />
-                    <span>اجتماعی رپورٹ جزئی</span>
-                    <strong>0.87</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/print.png" alt="" />
-                    <span>گواہوں کی فہرست</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/add.png" alt="" />
-                    <span>پولیس اسٹیشن</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/delete.png" alt="" />
-                    <span>رسپانس</span>
-                    <strong>0</strong>
-                </div>
-            </div>
-        </div>
-
-        <div class="summary-group">
-            <div class="group-title">تفصیل سنل</div>
-            <div class="summary-grid">
-                <div class="summary-item">
-                    <img src="images/add.png" alt="" />
-                    <span>چالان</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/update.png" alt="" />
-                    <span>صحت کی رپورٹ</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/info.png" alt="" />
-                    <span>اخراجات</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/save.png" alt="" />
-                    <span>مخفی رپورٹ</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/print.png" alt="" />
-                    <span>ایکسپریس رپورٹ</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item wide">
-                    <img src="images/zoomout.png" alt="" />
-                    <span>روزانہ ڈائری رپورٹ</span>
-                    <strong>0</strong>
+    @if (currentCase == null && isLoading)
+    {
+        <div style="text-align:center; padding: 20px;">Loading data...</div>
+    }
+    else
+    {
+        <!-- Main Panels Section -->
+        <section class="summary-panels">
+            <!-- Group 1 (Rightmost in Visual RTL): FIR Detail -->
+            <div class="summary-group">
+                <div class="group-title">تفصیل FIR @(currentCase?.FIRNO)/25</div>
+                <div class="summary-grid">
+                    <button class="summary-item" type="button">
+                        <img src="images/info.png" alt="Witnesses" />
+                        <span>گواہان و ضمانتی</span>
+                        <strong>0</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/add.png" alt="Location" />
+                        <span>جائے وقوعہ برآمدگی</span>
+                        <strong>0</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/update.png" alt="Employees" />
+                        <span>ہمراہی ملازمان</span>
+                        <strong>0</strong>
+                    </button>
+                     <button class="summary-item" type="button">
+                        <img src="images/zoomout.png" alt="Map" />
+                        <span>نقشہ موقع برآمدگی</span>
+                        <strong>0</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/delete.png" alt="Accused" />
+                        <span>ملزمان</span>
+                        <strong>@(currentCase?.AccusedList?.Count ?? 0)</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/info.png" alt="Mobile" />
+                        <span>موبائل وائس نمبر</span>
+                        <strong>0</strong>
+                    </button>
+                     <button class="summary-item" type="button">
+                        <img src="images/save.png" alt="Victim" />
+                        <span>منقولہ ، مضروب ، وکٹم</span>
+                        <strong>0</strong>
+                    </button>
+                     <button class="summary-item" type="button">
+                        <img src="images/add.png" alt="Property" />
+                        <span>مال مقدمہ برآمدگی</span>
+                        <strong>0</strong>
+                    </button>
+                     <button class="summary-item" type="button">
+                        <img src="images/print.png" alt="Index" />
+                        <span>انڈیکس مسل</span>
+                        <strong>0</strong>
+                    </button>
                 </div>
             </div>
-        </div>
 
-        <div class="summary-group">
-            <div class="group-title">تفصیل FIR</div>
-            <div class="summary-grid">
-                <div class="summary-item">
-                    <img src="images/add.png" alt="" />
-                    <span>جنائی نوعیت</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/update.png" alt="" />
-                    <span>گواہان کی نوعیت</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/info.png" alt="" />
-                    <span>قانونی نوعیت</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/save.png" alt="" />
-                    <span>ملزمان کی نوعیت</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item">
-                    <img src="images/print.png" alt="" />
-                    <span>ملزم کی معلومات</span>
-                    <strong>0</strong>
-                </div>
-                <div class="summary-item wide">
-                    <img src="images/delete.png" alt="" />
-                    <span>حتمی رپورٹ</span>
-                    <strong>0</strong>
+            <!-- Group 2 (Middle): File Detail -->
+            <div class="summary-group">
+                <div class="group-title">تفصیل مسل</div>
+                <div class="summary-grid">
+                    <button class="summary-item" type="button">
+                        <img src="images/print.png" alt="Zimni Outer" />
+                        <span>ضمنی بیرونی</span>
+                        <strong>0</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/save.png" alt="Challan" />
+                        <span>چالان</span>
+                        <strong>0</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/update.png" alt="Zimni Inner" />
+                        <span>ضمنی اندرونی</span>
+                        <strong>0</strong>
+                    </button>
+                     <button class="summary-item" type="button">
+                        <img src="images/delete.png" alt="Discharge" />
+                        <span>اخراج / عدم پتہ</span>
+                        <strong>0</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/print.png" alt="Requests" />
+                        <span>درخواست ہائے</span>
+                        <strong>0</strong>
+                    </button>
+                     <button class="summary-item" type="button">
+                        <img src="images/print.png" alt="Saza Slip" />
+                        <span>سزاسلپ</span>
+                        <strong>0</strong>
+                    </button>
+                     <button class="summary-item" type="button">
+                        <img src="images/info.png" alt="Fardat" />
+                        <span>فردات</span>
+                        <strong>0</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/zoomout.png" alt="Disclosures" />
+                        <span>انکشافات</span>
+                        <strong>0</strong>
+                    </button>
+                    <button class="summary-item wide" type="button">
+                        <img src="images/update.png" alt="Progress" />
+                        <span>پراگریس رپورٹ</span>
+                        <strong>0</strong>
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="summary-table">
-        <div class="summary-table-header">
-            <button class="fab" title="نیا اندراج">+</button>
-            <span>ملزمان کا اندراج کریں</span>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>نمبر</th>
-                    <th>ملزم کا نام</th>
-                    <th>ولدیت</th>
-                    <th>شناختی کارڈ نمبر</th>
-                    <th>موبائل نمبر</th>
-                    <th>عمر</th>
-                    <th>قوم</th>
-                    <th>تصویر</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="8">کوئی ریکارڈ موجود نہیں</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+            <!-- Group 3 (Leftmost in Visual RTL): Forms -->
+            <div class="summary-group">
+                <div class="group-title">فارم ہائے</div>
+                <div class="summary-grid">
+                    <button class="summary-item" type="button">
+                        <img src="images/print.png" alt="Warrant" />
+                        <span>وارنٹ</span>
+                        <strong>0.75</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/info.png" alt="CDR" />
+                        <span>CDR</span>
+                        <strong></strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/save.png" alt="Ishtehar" />
+                        <span>اشتہار</span>
+                        <strong>0.87</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/update.png" alt="Noise" />
+                        <span>اشتہار شور و غوغا</span>
+                        <strong></strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/delete.png" alt="Fugitive" />
+                        <span>مفروری</span>
+                        <strong></strong>
+                    </button>
+                     <button class="summary-item" type="button">
+                        <img src="images/add.png" alt="RFA" />
+                        <span>RFA ریڈ</span>
+                        <strong></strong>
+                    </button>
+                     <button class="summary-item" type="button">
+                        <img src="images/save.png" alt="Arrest" />
+                        <span>گرفتاری و شناخت</span>
+                        <strong>0</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/info.png" alt="Prosecution" />
+                        <span>پراسیکیوشن</span>
+                        <strong></strong>
+                    </button>
+                     <button class="summary-item" type="button">
+                        <img src="images/print.png" alt="Jail" />
+                        <span>روبکار جیل</span>
+                        <strong>0</strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/save.png" alt="Receipt" />
+                        <span>رسید چالان</span>
+                        <strong></strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/update.png" alt="Talbi" />
+                        <span>طلبی 160</span>
+                        <strong></strong>
+                    </button>
+                    <button class="summary-item" type="button">
+                        <img src="images/print.png" alt="High Court" />
+                        <span>ہائی کورٹ</span>
+                        <strong></strong>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Table Section -->
+        <section class="summary-table">
+            <div class="summary-table-header">
+                <button class="fab" title="نیا اندراج">+</button>
+                <span>ملزمان کا اندراج کریں</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>نمبر</th>
+                        <th>ملزم کا نام</th>
+                        <th>شناختی کارڈ نمبر</th>
+                        <th>موبائل نمبر</th>
+                        <th>ملزم نامزد</th>
+                        <th>تاریخ گرفتاری</th>
+                        <th>حلیہ</th>
+                        <th>تصویر ملزم</th>
+                        <th>تبدیلی کریں</th>
+                        <th>ریکارڈ ختم</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (currentCase?.AccusedList == null || !currentCase.AccusedList.Any())
+                    {
+                        <tr>
+                            <td colspan="10" style="text-align:center;">کوئی ریکارڈ موجود نہیں</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        int index = 1;
+                        @foreach (var accused in currentCase.AccusedList)
+                        {
+                            <tr>
+                                <td>@(index++)</td>
+                                <td>@accused.ACCNAME</td>
+                                <td>@accused.ACCCNIC</td>
+                                <td>@accused.ACCMOBILE</td>
+                                <td>@accused.NOMINATE</td>
+                                <td>@accused.DATEARREST</td>
+                                <td>@accused.ACCSKETCH</td>
+                                <td>
+                                    @if(accused.ACCPIC != null && accused.ACCPIC.Length > 0)
+                                    {
+                                        <img src="data:image/png;base64,@Convert.ToBase64String(accused.ACCPIC)" style="width:30px;height:30px;border-radius:50%;" />
+                                    }
+                                    else
+                                    {
+                                        <span>-</span>
+                                    }
+                                </td>
+                                <td>
+                                    <button class="icon-btn" title="تبدیلی" aria-label="تبدیلی">
+                                        <img src="images/update.png" alt="Edit" style="width: 20px; height: 20px;" />
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="icon-btn" title="حذف" aria-label="حذف">
+                                        <img src="images/delete.png" alt="Delete" style="width: 20px; height: 20px;" />
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </section>
+    }
 </div>
+
+@code {
+    private Fir? currentCase;
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var cases = await CaseService.GetRecentCasesAsync();
+        if (cases != null && cases.Any())
+        {
+            currentCase = cases.First();
+        }
+        isLoading = false;
+    }
+}
+
 
 
 

@@ -6,27 +6,55 @@
 
 <div class="dashboard-screen" dir="rtl">
     <header class="topbar">
-        <div class="brand">missalpolice</div>
+        <div class="brand">Missal Police</div>
+@* Updating Home.razor to include Help Menu Dropdown *@
         <div class="top-actions">
-            <span>مشعل پولیس</span>
-            <span>ایف آئی آر تلاش</span>
-            <span>مرکزی ڈیش بورڈ</span>
+            
+            <div class="menu-item-container">
+                <a href="#" class="menu-item @(isFileMenuOpen ? "active" : "")" @onclick="ToggleFileMenu" @onclick:preventDefault>فائل</a>
+                @if (isFileMenuOpen)
+                {
+                    <div class="dropdown-menu show">
+                        <a href="#" class="dropdown-item">
+                             <span class="icon-placeholder">💾</span> ڈیٹا محفوظ کریں
+                        </a>
+                        <a href="#" class="dropdown-item highlight">
+                            <span class="icon-placeholder">☁️</span> ڈیٹا اپ لوڈ کریں
+                        </a>
+                         <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item text-danger">
+                            <span class="icon-placeholder">❌</span> بند کریں
+                        </a>
+                    </div>
+                }
+            </div>
+
+            <a href="#" class="menu-item">پرنٹ صفحات</a>
+
+            <div class="menu-item-container">
+                 <a href="#" class="menu-item @(isHelpMenuOpen ? "active" : "")" @onclick="ToggleHelpMenu" @onclick:preventDefault>راہنمائی حاصل کریں</a>
+                 @if (isHelpMenuOpen)
+                 {
+                     <div class="dropdown-menu show" style="min-width: 200px;">
+                        <a href="#" class="dropdown-item">استعمال کا طریقہ</a>
+                        <a href="#" class="dropdown-item highlight">برائے رابطہ</a>
+                        <a href="#" class="dropdown-item">لنک شیئر کریں</a>
+                        <a href="#" class="dropdown-item">سافٹ ویئر</a>
+                        <a href="#" class="dropdown-item">رجسٹر</a>
+                     </div>
+                 }
+            </div>
         </div>
     </header>
 
     <div class="dashboard-body">
         <aside class="side-panel">
             <div class="logo-card">
-                <div class="logo-mark" aria-hidden="true">
-                    <svg viewBox="0 0 120 140" role="presentation">
-                        <path fill="#1890ff" d="M85 10H38c-6 0-11 5-11 11v98c0 6 5 11 11 11h56V28z" />
-                        <path fill="#f89c1b" d="M85 10v18c0 5 4 9 9 9h10z" />
-                        <path fill="#fff" d="M62 45c-10 0-18 8-18 18 0 8 5 15 13 17l5 12 5-12c8-2 13-9 13-17 0-10-8-18-18-18zm0 25c-4 0-7-3-7-7s3-7 7-7 7 3 7 7-3 7-7 7z" />
-                        <path fill="#f89c1b" d="M52 82h20v8H52z" />
-                    </svg>
+                <div class="logo-mark" aria-hidden="true" style="overflow: hidden;">
+                    <img src="images/logo.png" alt="Missil Police Logo" style="width: 100%; height: 100%; object-fit: contain;" />
                 </div>
                 <div class="logo-text">
-                    <div class="logo-title">مشعل پولیس</div>
+                    <div class="logo-title">Missal Police</div>
                     <div class="logo-subtitle">MISSAIL POLICE</div>
                 </div>
             </div>
@@ -34,11 +62,11 @@
             <div class="side-actions">
                 <NavLink class="side-action primary" href="case-new">
                     <span class="icon">+</span>
-                    <span>نیا مقدمہ درج کریں</span>
+                    <span>FIR کا اندراج</span>
                 </NavLink>
                 <button class="side-action" type="button">
                     <span class="icon icon-refresh"></span>
-                    <span>فہرست مقدمات ریفریش</span>
+                    <span>FIR میں تبدیلی</span>
                 </button>
                 <NavLink class="side-action" href="summary">
                     <span class="icon">+</span>
@@ -46,11 +74,11 @@
                 </NavLink>
                 <NavLink class="side-action" href="zext">
                     <span class="icon">i</span>
-                    <span>اضافی معلومات</span>
+                    <span>ضروری معلومات</span>
                 </NavLink>
                 <button class="side-action ghost" type="button">
                     <span class="icon">≡</span>
-                    <span>انتظامی اختیارات</span>
+                    <span>کمپیوٹرائزڈ مثل کیلنڈر</span>
                 </button>
             </div>
         </aside>
@@ -59,15 +87,15 @@
             <div class="stats-row">
                 <div class="stat-card">
                     <div class="stat-value">0</div>
-                    <div class="stat-label">تبدیلی تفتیش</div>
+                    <div class="stat-label">تفتیش جدید</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">0</div>
-                    <div class="stat-label">منسوخ</div>
+                    <div class="stat-label">اخراج</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">0</div>
-                    <div class="stat-label">غیر دریافت</div>
+                    <div class="stat-label">عدم پتہ</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">@(cases?.Count ?? 0)</div>
@@ -80,10 +108,10 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">0</div>
-                    <div class="stat-label">درج مقدمات</div>
+                    <div class="stat-label">نامکمل چالان</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">512</div>
+                    <div class="stat-value">0</div>
                     <div class="stat-label">چالان 512</div>
                 </div>
                 <div class="stat-card">
@@ -95,7 +123,7 @@
             <div class="search-row">
                 <div class="timestamp">@DateTime.Now.ToString("dd MMM yyyy - dddd - hh:mm tt")</div>
                 <div class="search-box">
-                    <input type="text" placeholder="کیس تلاش کریں" aria-label="کیس تلاش کریں" />
+                    <input type="text" placeholder="تلاش کریں" aria-label="تلاش کریں" />
                     <button type="button" title="تلاش">
                         <span class="icon icon-search" aria-hidden="true"></span>
                     </button>
@@ -106,51 +134,52 @@
                 <table class="case-table" aria-label="فہرست مقدمات">
                     <thead>
                         <tr>
-                            <th>نوع مقدمہ</th>
-                            <th>مدعی</th>
-                            <th>نام ملزم</th>
-                            <th>مقام وقوعہ</th>
-                            <th>دفعات</th>
-                            <th>تاریخ جرم</th>
-                            <th>ایف آئی آر</th>
-                            <th>عمل</th>
-                            <th>نمبر</th>
+                            <th>نمبر شمار</th>
+                            <th>حذف</th>
+                            <th>تبدیلی</th>
+                            <th>مقدمہ نمبر</th>
+                            <th>مورخہ</th>
+                            <th>تھانہ</th>
+                            <th>مدعی مقدمہ</th>
+                            <th>موبائل نمبر</th>
+                            <th>جرم</th>
+                            <th>تفتیشی افسر</th>
+                            <th>پوزیشن مقدمہ</th>
                         </tr>
                     </thead>
                     <tbody>
                         @if (cases == null)
                         {
-                             <tr><td colspan="9" style="text-align:center; padding: 20px;">Loading data...</td></tr>
+                             <tr><td colspan="11" style="text-align:center; padding: 20px;">Loading data...</td></tr>
                         }
                         else if (!cases.Any())
                         {
-                             <tr><td colspan="9" style="text-align:center; padding: 20px;">No cases found.</td></tr>
+                             <tr><td colspan="11" style="text-align:center; padding: 20px;">No cases found.</td></tr>
                         }
                         else
                         {
                             @foreach (var item in cases)
                             {
                                 <tr class="@(selectedCase == item ? "selected" : "")" @onclick="() => SelectCase(item)">
-                                    <td>@(item.OFFENCE ?? "-")</td>
-                                    <td>@(item.MUDAI ?? "-")</td>
-                                    <td>
-                                        @if(item.AccusedList != null && item.AccusedList.Any())
-                                        {
-                                            @string.Join(", ", item.AccusedList.Select(a => a.ACCNAME))
-                                        }
-                                        else 
-                                        { 
-                                            <span>نامعلوم</span> 
-                                        }
-                                    </td>
-                                    <td>@(item.PS ?? "-")</td>
-                                    <td>@(item.OFFENCE ?? "-")</td>
-                                    <td>@(item.IDATE ?? item.FIRDATE)</td>
-                                    <td>@(item.FIRNO ?? "-")</td>
-                                    <td>
-                                        <button class="icon icon-refresh" title="اپڈیٹ" aria-label="اپڈیٹ"></button>
-                                    </td>
                                     <td>@item.FIRID</td>
+                                    <td>
+                                        <button class="icon-btn" title="حذف" aria-label="حذف">
+                                             <img src="images/delete.png" alt="Delete" style="width: 20px; height: 20px;" />
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="icon-btn" title="تبدیلی" aria-label="تبدیلی">
+                                            <img src="images/update.png" alt="Edit" style="width: 20px; height: 20px;" />
+                                        </button>
+                                    </td>
+                                    <td>@(item.FIRNO ?? "-")</td>
+                                    <td>@(item.IDATE ?? item.FIRDATE)</td>
+                                    <td>@(item.PS ?? "-")</td>
+                                    <td>@(item.MUDAI ?? "-")</td>
+                                    <td>@(item.FIRMOBILE ?? "-")</td>
+                                    <td>@(item.OFFENCE ?? "-")</td>
+                                    <td>@(item.IOFFICER ?? "-")</td>
+                                    <td>@(item.FIRSTATUS ?? "زیر تفتیش")</td>
                                 </tr>
                             }
                         }
@@ -164,11 +193,13 @@
 @code {
     private List<Fir> cases;
     private Fir selectedCase;
+    private bool isFileMenuOpen = false;
+    private bool isHelpMenuOpen = false;
 
     protected override async Task OnInitializedAsync()
     {
         cases = await CaseService.GetRecentCasesAsync();
-        if (cases.Any())
+        if (cases != null && cases.Any())
         {
             selectedCase = cases.First();
         }
@@ -177,6 +208,18 @@
     private void SelectCase(Fir item)
     {
         selectedCase = item;
+    }
+
+    private void ToggleFileMenu()
+    {
+        isFileMenuOpen = !isFileMenuOpen;
+        if (isFileMenuOpen) isHelpMenuOpen = false;
+    }
+
+    private void ToggleHelpMenu()
+    {
+        isHelpMenuOpen = !isHelpMenuOpen;
+        if (isHelpMenuOpen) isFileMenuOpen = false;
     }
 }
 
