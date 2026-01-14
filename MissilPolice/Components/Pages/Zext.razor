@@ -2,73 +2,437 @@
 @layout Layout.FullScreenLayout
 @inject IJSRuntime JS
 
-<div class="zext-screen" dir="rtl">
-    <header class="zext-header">
-        <h1>ضمنی رپورٹ</h1>
-        <div class="zext-controls">
-            <label>سائز</label>
-            <select>
-                <option>A4</option>
-                <option>A3</option>
-            </select>
-            <label>پرنٹ</label>
-            <select>
-                <option>موجودہ صفحہ</option>
-            </select>
-            <label>ڈسپلے</label>
-            <select>
-                <option>تمام صفحات</option>
-            </select>
-        </div>
-    </header>
-
-    <main class="zext-body">
-        <section class="zext-preview">
-            <article class="doc-sheet">
-                <div class="doc-header">
-                    <div class="doc-meta">
-                        <div>مقدمہ نمبر: 25/25</div>
-                        <div>مورخہ: 05.11.2025</div>
-                        <div>دفعہ: 380</div>
+<div class="zext-container" dir="rtl">
+    <div class="scroll-area">
+        <div class="paper-sheet">
+            <div class="paper-header">
+                <div class="header-row top-meta">
+                    <div class="meta-item right">
+                        <strong>تھانہ:</strong> <span>صدر</span>
                     </div>
-                    <div class="doc-title">ضمنی رپورٹ نمبر 1 بر مقدمہ نمبر 25/25 بجرم 380 تھانہ سول لائنز</div>
+                    <div class="meta-item center-title">
+                        <div class="main-title">رپورٹ ضمنی بیرونی</div>
+                        <div class="sub-title">پولیس فارم 25_54 (I)</div>
+                    </div>
+                    <div class="meta-item left">
+                        <strong>ضلع:</strong> <span>فیصل آباد</span>
+                    </div>
                 </div>
 
-                <div class="doc-map">
-                    <div class="compass">شمال</div>
-                    <div class="map-lines"></div>
+                <div class="zimni-row">
+                    <div class="zimni-no">
+                        <span class="lbl">ضمنی نمبر:</span> <span class="val">1</span>
+                    </div>
+                    <select class="zimni-select">
+                        <option>ابتدائی رپورٹ کا مکمل ریکارڈ</option>
+                    </select>
                 </div>
 
-                <div class="doc-notes">
-                    <p>1. نقشہ موقع A4 سائز پر تیار کیا گیا ہے جس میں تمام تفصیلات درج ہیں اور گواہان کے بیانات قلمبند کیے گئے ہیں۔</p>
-                    <p>2. موقع ملاحظہ سے پایا گیا کہ جائے وقوعہ ایک رہائشی مکان ہے جہاں سے چوری کی واردات رپورٹ ہوئی ہے۔</p>
-                </div>
-            </article>
-        </section>
+                <div class="header-grid">
+                    <div class="grid-col col-1">
+                        <div class="line-item">
+                            <span class="lbl">ابتدائی اطلائی رپورٹ:</span> <span class="val">25/25</span>
+                        </div>
+                        <div class="line-item">
+                            <span class="lbl">تاریخ وقوعہ:</span> <span class="val">18.11.2025</span>
+                        </div>
+                        <div class="line-item">
+                            <span class="lbl">موصول ہونے کا وقت وتاریخ:</span> <span class="val dotted"></span>
+                        </div>
+                        <div class="line-item">
+                            <span class="lbl">روانگی کا وقت وتاریخ:</span> <span class="val dotted"></span>
+                        </div>
+                    </div>
 
-        <aside class="zext-tools">
-            <button class="tool-button success" title="U.O-U?U^O, UcOأ±UOUآ§">
-                <img src="images/save.png" alt="" />
+                    <div class="grid-col col-2">
+                        <div class="line-item center-group">
+                            <span class="lbl">مورخہ:</span> <span class="val">05.11.2025</span>
+                        </div>
+                        <div class="line-item">
+                            <span class="lbl">مقام وقوعہ:</span> <span class="val dotted"></span>
+                        </div>
+                        <div class="line-item bottom-crime">
+                            <span class="lbl">جرم:</span> <span class="val">380 پ ب</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th class="col-date">تاریخ و وقت کاروائی</th>
+                        <th class="col-sr">نمبر <br/> شمار</th>
+                        <th class="col-details">
+                            <div class="th-main">حالات تفتیش</div>
+                            <div class="th-sub">مختصر حالات مقدمہ اور ذریعے اطلاع، مدعی، ملزم کی گرفتاری، برآمدگی، عدالتی کارروائی، و دیگر کاروائی زمرہ <br/> زیر دفعہ 161 ف تعزیرات، دفعہ 342، دفعہ 186، دفعہ 211</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row-parties">
+                        <td class="td-date">(firdate)</td>
+                        <td class="td-sr"></td>
+                        <td class="td-details center-text">
+                            <div>مختصر حالات مقدمہ: مدعی مقدمہ، ملزم مقدمہ اور ذریعہ اطلاع سے حاصل شدہ تفصیل مقدمہ</div>
+                            <div style="margin-top: 5px;">
+                                <span style="margin-left: 20px;">مرتبہ: (io)</span>
+                                <span>بنام: (accname)</span>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-date">مختصر حالات</td>
+                        <td class="td-sr">1</td>
+                        <td class="td-details">
+                            <div class="row-content">
+                                <div class="row-text">
+                                    مختصر حالات: مدعی مقدمہ کے بیان کے مطابق وقوعہ کی تفصیل، ملزم کی شناخت اور ابتدائی کاروائی درج کی جاتی ہے۔
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-date"></td>
+                        <td class="td-sr"></td>
+                        <td class="td-details">
+                            <div class="row-content">
+                                <div class="row-text">
+                                    بیان (w1) کے مطابق ملزم کے خلاف وقوعہ سے متعلق حقائق زیر دفعہ 161 ف تعزیرات درج کیے جاتے ہیں۔
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-date">161 صفح</td>
+                        <td class="td-sr">2</td>
+                        <td class="td-details">
+                            <div class="row-content">
+                                <div class="row-text">
+                                    بیان (w2) کے مطابق ملزم کے خلاف وقوعہ سے متعلق حقائق زیر دفعہ 161 ف تعزیرات درج کیے جاتے ہیں۔
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-date">161 صفح</td>
+                        <td class="td-sr">3</td>
+                        <td class="td-details">
+                            <div class="row-content">
+                                <div class="row-text">
+                                    موقع وقوعہ (iplace) پر معائنہ کرتے ہوئے حدود شمال، مشرق، جنوب اور مغرب درج کی جاتی ہیں اور موقع پر موجود شواہد کی تفصیل لکھی جاتی ہے۔
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-date">ملاحظہ موقع</td>
+                        <td class="td-sr">4</td>
+                        <td class="td-details">
+                            <div class="row-content">
+                                <div class="row-text">
+                                    ملزم (acc1) کی نشاندہی پر موقع واردات سے متعلق مزید تفصیل، فاصلے اور مقام کی نشاندہی درج کی جاتی ہے۔
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-date">روایت نام</td>
+                        <td class="td-sr">5</td>
+                        <td class="td-details">
+                            <div class="row-content">
+                                <div class="row-text">
+                                    درخواست فارم میں مدعی کی تفصیل، واقعہ کا خلاصہ، گواہان کے بیانات اور دیگر ضروری کاروائی درج کی جاتی ہے۔
+                                </div>
+                                <div class="row-text">خاکہ ملزم: (acc1 sketch)</div>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="sidebar-tools">
+        <div class="tool-group">
+            <div class="size-select">
+                <select><option>A4</option></select>
+            </div>
+            <button class="circle-btn check" title="Save">
+                <img src="images/save.png" alt="Save" />
             </button>
-            <button class="tool-button" title="U_Oأ±U+U1 UcOأ±UOUآ§">
-                <img src="images/print.png" alt="" />
+            <button class="circle-btn preview" title="Preview">
+                <img src="images/fullscreen.png" alt="Preview" />
             </button>
-            <button class="tool-button danger" type="button" title="واپس جائیں" @onclick="GoBack">
-                <img src="images/close.png" alt="" />
+            <button class="circle-btn print" title="Print">
+                <img src="images/print.png" alt="Print" />
             </button>
-            <button class="tool-button" title="OU_U^UOU1">
-                <img src="images/update.png" alt="" />
+            <button class="circle-btn close" title="Close" @onclick="GoBack">
+                <img src="images/close.png" alt="Close" />
             </button>
-        </aside>
-    </main>
+            <button class="circle-btn info" title="Info">
+                <img src="images/info.png" alt="Info" />
+            </button>
+            <button class="circle-btn search" title="Search">
+                <img src="images/zoomout.png" alt="Search" />
+            </button>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="tool-group bottom">
+            <button class="pill-btn add">
+                <img src="images/add.png" width="16" /> نئی ضمنی بنائیں
+            </button>
+            <button class="pill-btn edit">
+                <img src="images/update.png" width="16" /> تبدیلی کریں
+            </button>
+            <button class="pill-btn delete">
+                <img src="images/delete.png" width="16" /> ضمنی حذف
+            </button>
+        </div>
+    </div>
 </div>
 
+<style>
+    * { box-sizing: border-box; }
+    body { background-color: #f0f0f0; margin: 0; font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif; }
+
+    .zext-container {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .scroll-area {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        background: #f2f2f2;
+    }
+
+    .paper-sheet {
+        width: 210mm;
+        min-height: 297mm;
+        background: white;
+        padding: 12mm 14mm;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        border: 1px solid #666;
+        direction: rtl;
+        position: relative;
+    }
+
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    .meta-item { font-size: 14px; }
+    .center-title { text-align: center; border-bottom: 1px solid #000; padding: 0 12px 4px; margin: 0 24px; flex: 1; }
+    .main-title { font-size: 18px; font-weight: bold; margin: 0; }
+    .sub-title { font-size: 11px; margin-top: -2px; }
+
+    .paper-header {
+        border-bottom: 1px solid #444;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+    }
+
+    .zimni-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 4px 0 6px;
+    }
+
+    .zimni-select {
+        min-width: 190px;
+        height: 28px;
+        border: 1px solid #777;
+        background: #fff;
+        font-family: inherit;
+        font-size: 13px;
+        padding: 0 6px;
+    }
+
+    .header-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 18px;
+        position: relative;
+        margin-top: 6px;
+    }
+
+    .line-item {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 4px;
+        font-size: 13px;
+    }
+    .lbl { white-space: nowrap; margin-left: 5px; }
+    .val { font-weight: bold; }
+    .val.dotted { border-bottom: 1px dotted #000; flex: 1; min-height: 14px; }
+    .zimni-no { font-size: 14px; }
+
+    .bottom-crime { text-align: right; margin-top: auto; }
+
+    .report-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #444;
+        margin-top: 8px;
+    }
+
+    .report-table th, .report-table td {
+        border: 1px solid #666;
+        padding: 4px 6px;
+        vertical-align: top;
+    }
+
+    .report-table th {
+        text-align: center;
+        background: #fdfdfd;
+        font-weight: bold;
+    }
+
+    .col-date { width: 14%; }
+    .col-sr { width: 7%; }
+    .col-details { width: 79%; }
+
+    .th-sub {
+        font-size: 10px;
+        font-weight: normal;
+        margin-top: 2px;
+        line-height: 1.2;
+    }
+
+    .td-date { text-align: center; font-size: 12px; font-family: sans-serif; }
+    .td-sr { text-align: center; font-weight: bold; padding-top: 10px; }
+
+    .center-text { text-align: center; }
+
+    .row-content { display: flex; flex-direction: row; }
+    .row-label {
+        font-weight: bold;
+        text-decoration: underline;
+        margin-left: 10px;
+        white-space: nowrap;
+        min-width: 70px;
+        text-align: right;
+    }
+    .row-text { text-align: justify; line-height: 1.8; font-size: 13px; }
+
+    .sidebar-tools {
+        width: 68px;
+        background: white;
+        border-left: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.03);
+    }
+    .size-select select {
+        width: 48px;
+        height: 26px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #f8f8f8;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .circle-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+        background: #1f86d7;
+        transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+        box-shadow: 0 2px 4px rgba(31, 134, 215, 0.3);
+    }
+    .circle-btn:hover {
+        transform: scale(1.05);
+        background: #1a75bc;
+        box-shadow: 0 3px 6px rgba(31, 134, 215, 0.4);
+    }
+    .circle-btn img {
+        width: 20px;
+        height: 20px;
+        filter: invert(1);
+    }
+    
+    /* Specific overrides if needed */
+    .info { background: #1f86d7; } /* Made consistent with others */
+
+    .bottom { margin-top: auto; width: 100%; padding: 0 8px; }
+
+    .pill-btn {
+        width: 100%;
+        padding: 8px 10px;
+        margin-bottom: 8px;
+        border: none;
+        background: transparent;
+        color: #555;
+        font-size: 13px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: flex-end;
+        border-radius: 6px;
+        transition: all 0.2s;
+    }
+    .pill-btn:hover {
+        background: #f0f7fc;
+        color: #1f86d7;
+    }
+    .pill-btn img { 
+        width: 18px; 
+        height: 18px; 
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+    .pill-btn:hover img {
+        opacity: 1;
+    }
+    
+    .add { color: #1f86d7; font-weight: bold; }
+    .add img { 
+        filter: invert(41%) sepia(66%) saturate(3000%) hue-rotate(188deg) brightness(88%) contrast(88%); /* Tint matching #1f86d7 somewhat if black, or just rely on image */
+        opacity: 1;
+    }
+
+    @@media print {
+        .sidebar-tools, .zext-container { display: block; height: auto; overflow: visible; }
+        .sidebar-tools { display: none; }
+        .scroll-area { display: block; padding: 0; background: white; }
+        .paper-sheet { margin: 0; box-shadow: none; border: none; width: 100%; height: auto; }
+        @@page { size: A4; margin: 10mm; }
+    }
+</style>
+
 @code {
-    private Task GoBack()
+    private async Task GoBack()
     {
-        return JS.InvokeVoidAsync("missilPolice.goBack", "/").AsTask();
+        await JS.InvokeVoidAsync("history.back");
     }
 }
-
-
-

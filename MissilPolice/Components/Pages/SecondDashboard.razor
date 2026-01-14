@@ -3,6 +3,7 @@
 @using MissilPolice.Models
 @using MissilPolice.Services
 @inject CaseService CaseService
+@inject NavigationManager NavManager
 
 <div class="summary-screen" dir="rtl">
     <header class="summary-title">
@@ -75,7 +76,7 @@
             <div class="summary-group">
                 <div class="group-title">تفصیل مسل</div>
                 <div class="summary-grid">
-                    <button class="summary-item" type="button">
+                    <button class="summary-item" type="button" @onclick='() => NavManager.NavigateTo("zext")'>
                         <img src="images/print.png" alt="Zimni Outer" />
                         <span>ضمنی بیرونی</span>
                         <strong>0</strong>
@@ -267,7 +268,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var cases = await CaseService.GetRecentCasesAsync();
+        var cases = await CaseService.GetAllCasesAsync();
         if (cases != null && cases.Any())
         {
             currentCase = cases.First();

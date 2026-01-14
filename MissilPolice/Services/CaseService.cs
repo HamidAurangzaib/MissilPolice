@@ -13,7 +13,7 @@ namespace MissilPolice.Services
             _context = context;
         }
 
-        public async Task<List<Fir>> GetRecentCasesAsync()
+        public async Task<List<Fir>> GetAllCasesAsync()
         {
             try
             {
@@ -26,6 +26,20 @@ namespace MissilPolice.Services
             {
                 Console.WriteLine($"Error fetching cases: {ex.Message}");
                 return new List<Fir>();
+            }
+        }
+        public async Task<bool> AddCaseAsync(Fir newCase)
+        {
+            try
+            {
+                _context.Firs.Add(newCase);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error adding case: {ex.Message}");
+                return false;
             }
         }
     }

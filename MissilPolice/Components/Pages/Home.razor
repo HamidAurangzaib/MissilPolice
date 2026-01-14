@@ -29,7 +29,22 @@
                 }
             </div>
 
-            <a href="#" class="menu-item">پرنٹ صفحات</a>
+            <div class="menu-item-container">
+                <a href="#" class="menu-item @(isPrintMenuOpen ? "active" : "")" @onclick="TogglePrintMenu" @onclick:preventDefault>پرنٹ صفحات</a>
+                @if (isPrintMenuOpen)
+                {
+                    <div class="dropdown-menu show" style="min-width: 180px;">
+                        <label class="dropdown-item" style="cursor: pointer;">
+                            <input type="checkbox" checked style="width: 16px; height: 16px; accent-color: var(--teal);" />
+                            <span>A4 پرنٹ</span>
+                        </label>
+                        <label class="dropdown-item" style="cursor: pointer;">
+                            <input type="checkbox" checked style="width: 16px; height: 16px; accent-color: var(--teal);" />
+                            <span>لیگل پرنٹ</span>
+                        </label>
+                    </div>
+                }
+            </div>
 
             <div class="menu-item-container">
                  <a href="#" class="menu-item @(isHelpMenuOpen ? "active" : "")" @onclick="ToggleHelpMenu" @onclick:preventDefault>راہنمائی حاصل کریں</a>
@@ -85,39 +100,39 @@
 
         <section class="main-panel">
             <div class="stats-row">
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
+                <button class="stat-card" type="button">
+                    <div class="stat-value">@(cases?.Count(c => c.NEW == "Yes" || c.NEW == "true") ?? 0)</div>
                     <div class="stat-label">تفتیش جدید</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
+                </button>
+                <button class="stat-card" type="button">
+                    <div class="stat-value">@(cases?.Count(c => c.FIRSTATUS == "اخراج") ?? 0)</div>
                     <div class="stat-label">اخراج</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
+                </button>
+                <button class="stat-card" type="button">
+                    <div class="stat-value">@(cases?.Count(c => c.FIRSTATUS == "عدم پتہ") ?? 0)</div>
                     <div class="stat-label">عدم پتہ</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">@(cases?.Count ?? 0)</div>
+                </button>
+                <button class="stat-card" type="button">
+                    <div class="stat-value">@(cases?.Count(c => c.FIRSTATUS == "زیر تفتیش") ?? 0)</div>
                     <div class="stat-label">زیر تفتیش</div>
-                </div>
+                </button>
                 <div class="stat-connector"></div>
-                <div class="stat-card">
+                <button class="stat-card" type="button">
                     <div class="stat-value">@(cases?.Count ?? 0)</div>
                     <div class="stat-label">کل مقدمات</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
+                </button>
+                <button class="stat-card" type="button">
+                    <div class="stat-value">@(cases?.Count(c => c.FIRSTATUS == "نامکمل چالان") ?? 0)</div>
                     <div class="stat-label">نامکمل چالان</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
+                </button>
+                <button class="stat-card" type="button">
+                    <div class="stat-value">@(cases?.Count(c => c.FIRSTATUS == "چالان 512") ?? 0)</div>
                     <div class="stat-label">چالان 512</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
+                </button>
+                <button class="stat-card" type="button">
+                    <div class="stat-value">@(cases?.Count(c => c.FIRSTATUS == "چالان") ?? 0)</div>
                     <div class="stat-label">چالان</div>
-                </div>
+                </button>
             </div>
 
             <div class="search-row">
@@ -191,14 +206,15 @@
 </div>
 
 @code {
-    private List<Fir> cases;
+    private List<Fir>? cases;
     private Fir selectedCase;
     private bool isFileMenuOpen = false;
     private bool isHelpMenuOpen = false;
+    private bool isPrintMenuOpen = false;
 
     protected override async Task OnInitializedAsync()
     {
-        cases = await CaseService.GetRecentCasesAsync();
+        cases = await CaseService.GetAllCasesAsync();
         if (cases != null && cases.Any())
         {
             selectedCase = cases.First();
@@ -213,13 +229,31 @@
     private void ToggleFileMenu()
     {
         isFileMenuOpen = !isFileMenuOpen;
-        if (isFileMenuOpen) isHelpMenuOpen = false;
+        if (isFileMenuOpen) 
+        {
+            isHelpMenuOpen = false;
+            isPrintMenuOpen = false;
+        }
     }
 
     private void ToggleHelpMenu()
     {
         isHelpMenuOpen = !isHelpMenuOpen;
-        if (isHelpMenuOpen) isFileMenuOpen = false;
+        if (isHelpMenuOpen) 
+        {
+            isFileMenuOpen = false;
+            isPrintMenuOpen = false;
+        }
+    }
+
+    private void TogglePrintMenu()
+    {
+        isPrintMenuOpen = !isPrintMenuOpen;
+        if (isPrintMenuOpen) 
+        {
+            isFileMenuOpen = false;
+            isHelpMenuOpen = false;
+        }
     }
 }
 

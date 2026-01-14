@@ -1,6 +1,9 @@
 ﻿@page "/case-new"
 @layout Layout.FullScreenLayout
 @inject IJSRuntime JS
+@inject MissilPolice.Services.CaseService CaseService
+@inject NavigationManager NavManager
+@using MissilPolice.Models
 
 <div class="case-new-screen" dir="rtl">
     <header class="form-header">
@@ -8,83 +11,252 @@
         <span>نئی درخواست</span>
     </header>
 
-    <section class="case-form">
-        <div class="form-grid">
-            <label>مقدمہ نمبر</label>
-            <input type="text" placeholder="25/25" />
+    <section class="case-form-legacy">
+        <div class="legacy-grid">
+            <!-- Row 1 -->
+            <div class="field-pair">
+                <label>مقدمہ نمبر</label>
+                <div class="split-input">
+                    <input type="text" @bind="newCase.FIRNO" placeholder="25/25" />
+                </div>
+            </div>
+            <div class="field-pair">
+                <label>مورخہ</label>
+                <input type="text" @bind="newCase.FIRDATE" placeholder="DD.MM.YYYY" />
+            </div>
+            <div class="field-pair">
+                <label>تاریخ وقوعہ</label>
+                <input type="text" @bind="newCase.IDATE" placeholder="DD.MM.YYYY" />
+            </div>
+             <div class="field-pair">
+                <label>تھانہ</label>
+                <input type="text" @bind="newCase.PS" />
+            </div>
 
-            <label>تاریخ وقوعہ</label>
-            <input type="date" />
+            <!-- Row 2 -->
+            <div class="field-pair double-width">
+                <label>مدعی مقدمہ</label>
+                <input type="text" @bind="newCase.MUDAI" />
+            </div>
+            <div class="field-pair">
+                <label>موبائل نمبر</label>
+                <input type="text" @bind="newCase.FIRMOBILE" />
+            </div>
+            <div class="field-pair">
+                <label>شناختی کارڈ</label>
+                <input type="text" @bind="newCase.FIRCNIC" />
+            </div>
 
-            <label>تاریخ رپورٹ</label>
-            <input type="date" />
+            <!-- Row 3 -->
+            <div class="field-pair double-width">
+                <label>جرم</label>
+                <input type="text" @bind="newCase.OFFENCE" />
+            </div>
+            <div class="field-pair">
+                <label>مرتبہ مرسلہ</label>
+                <input type="text" @bind="newCase.MURASLA" />
+            </div>
+            <div class="field-pair">
+                <label>تحریر کنندہ</label>
+                <input type="text" @bind="newCase.WRITER" />
+            </div>
 
-            <label>نام مدعی</label>
-            <input type="text" />
+            <!-- Row 4 -->
+            <div class="field-pair">
+                <label>تفتیشی آفیسر</label>
+                <input type="text" @bind="newCase.IOFFICER" />
+            </div>
+            <div class="field-pair">
+                <label>تفتیشی موبائل</label>
+                <input type="text" @bind="newCase.IOMOBILE" />
+            </div>
+            <div class="field-pair">
+                <label>عہدہ</label>
+                <input type="text" @bind="newCase.RANK" />
+            </div>
+            <div class="field-pair">
+                <label>سربمہر</label>
+                <input type="text" @bind="newCase.STAMP" />
+            </div>
 
-            <label>مقام وقوعہ</label>
-            <input type="text" />
+            <!-- Row 5 -->
+             <div class="field-pair">
+                <label>محررتھانہ</label>
+                <input type="text" @bind="newCase.MOHARRAR" />
+            </div>
+            <div class="field-pair">
+                <label>SHO</label>
+                <input type="text" @bind="newCase.SHO" />
+            </div>
+             <div class="field-pair">
+                <label>ڈرائیور</label>
+                <input type="text" @bind="newCase.VDRIVER" />
+            </div>
+            <div class="field-pair">
+                <label>گاڑی نمبر</label>
+                <input type="text" @bind="newCase.VEHICLENO" />
+            </div>
 
-            <label>دفعات</label>
-            <input type="text" />
-
-            <label>نام ملزم</label>
-            <input type="text" />
-
-            <label>ولدیت</label>
-            <input type="text" />
-
-            <label>قوم</label>
-            <input type="text" />
-
-            <label>شناختی کارڈ نمبر</label>
-            <input type="text" />
-
-            <label>عمر</label>
-            <input type="text" />
-
-            <label>تھانہ</label>
-            <input type="text" />
-
-            <label>تفتیشی افسر</label>
-            <input type="text" />
-
-            <label>رابطہ نمبر</label>
-            <input type="text" />
-
-            <label>SHO</label>
-            <input type="text" />
-
-            <label>DSP</label>
-            <input type="text" />
-
-            <label>SP</label>
-            <input type="text" />
-
-            <label>نوٹ</label>
-            <input type="text" />
+            <!-- Row 6 -->
+             <div class="field-pair">
+                <label>DSP</label>
+                <input type="text" @bind="newCase.DSP" />
+            </div>
+            <div class="field-pair">
+                <label>SP</label>
+                <input type="text" @bind="newCase.DIVISIONSP" />
+            </div>
+             <div class="field-pair">
+                <label>ضلع</label>
+                <input type="text" @bind="newCase.DISTRICT" />
+            </div>
+            <div class="field-pair">
+                <label>مقدمہ</label>
+                <input type="text" @bind="newCase.FIRSTATUS" />
+            </div>
         </div>
 
-        <div class="form-textarea">
-            <label>متن ایف آئی آر</label>
-            <textarea rows="8" placeholder="یہاں ایف آئی آر کا متن درج کریں"></textarea>
+        <div class="form-textarea-legacy">
+            <label>متن FIR</label>
+            <textarea rows="12" @bind="newCase.MATANFIR"></textarea>
         </div>
 
-        <div class="form-actions">
-            <button class="round-button danger" type="button" title="واپس جائیں" @onclick="GoBack">
-                <img src="images/close.png" alt="" />
+        <div class="form-actions-legacy">
+            <button class="round-btn cancel" type="button" @onclick="GoBack">
+                <!-- X Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
-            <button class="round-button" type="button" title="محفوظ کریں">
-                <img src="images/save.png" alt="" />
+            <button class="round-btn save" type="button" @onclick="SaveCase">
+                <!-- + Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             </button>
         </div>
     </section>
+
+    <style>
+        .case-new-screen {
+            background: #fff;
+            min-height: 100vh;
+            padding: 10px;
+        }
+        .form-header {
+            border-bottom: 2px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .form-header h1 {
+            font-size: 16px;
+            font-weight: normal;
+            margin: 0;
+        }
+        .legacy-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+        .field-pair {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .field-pair.double-width {
+            grid-column: span 2;
+        }
+        .field-pair label {
+            white-space: nowrap;
+            font-size: 14px;
+            min-width: 60px;
+            text-align: left; /* Because RTL, left is closer to input */
+        }
+        .field-pair input, .field-pair select {
+            flex: 1;
+            height: 30px; /* Compact height */
+            border: 1px solid #777;
+            padding: 0 5px;
+            font-family: inherit;
+        }
+        .split-input {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex: 1;
+        }
+        .split-input input {
+            text-align: center;
+        }
+        .form-textarea-legacy {
+            border: 1px solid #ccc;
+            padding: 10px;
+            position: relative;
+            margin-top: 20px;
+            padding-top: 20px; /* Space for label overlay */
+        }
+        .form-textarea-legacy label {
+            position: absolute;
+            top: -12px;
+            right: 15px;
+            background: #fff;
+            padding: 0 5px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .form-textarea-legacy textarea {
+            width: 100%;
+            border: none;
+            resize: vertical;
+            font-family: inherit;
+        }
+        .form-actions-legacy {
+            display: flex;
+            justify-content: center;
+            gap: 150px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+        .round-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .round-btn.save {
+            background-color: #00ace6; /* Light Blue */
+        }
+        .round-btn.cancel {
+            background-color: #00ace6;
+        }
+    </style>
 </div>
 
 @code {
+    private Fir newCase = new Fir();
+
+    private async Task SaveCase()
+    {
+        // Simple validation or default values if needed
+        if (string.IsNullOrWhiteSpace(newCase.FIRNO))
+        {
+             // Maybe show alert? For now just proceed or return
+        }
+
+        bool success = await CaseService.AddCaseAsync(newCase);
+        if (success)
+        {
+             await GoBack();
+        }
+    }
+
     private Task GoBack()
     {
-        return JS.InvokeVoidAsync("missilPolice.goBack", "/").AsTask();
+        NavManager.NavigateTo("/");
+        return Task.CompletedTask;
     }
 }
 
