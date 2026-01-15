@@ -151,7 +151,7 @@
         }
         .legacy-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 10px 15px;
             padding: 10px;
             border: 1px solid #ccc;
@@ -212,7 +212,7 @@
         .form-actions-legacy {
             display: flex;
             justify-content: center;
-            gap: 150px;
+            gap: clamp(24px, 20vw, 150px);
             margin-top: 20px;
             padding-bottom: 20px;
         }
@@ -231,6 +231,39 @@
         }
         .round-btn.cancel {
             background-color: #00ace6;
+        }
+
+        @@media (max-width: 900px) {
+            .legacy-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @@media (max-width: 600px) {
+            .legacy-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            .field-pair {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 6px;
+            }
+            .field-pair.double-width {
+                grid-column: span 1;
+            }
+            .field-pair label {
+                white-space: normal;
+                text-align: right;
+                min-width: auto;
+            }
+            .field-pair input,
+            .field-pair select {
+                width: 100%;
+            }
+            .form-textarea-legacy label {
+                right: 10px;
+                font-size: 14px;
+            }
         }
     </style>
 </div>

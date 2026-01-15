@@ -1,0 +1,516 @@
+/* Zext.razor Styles */
+* {
+    box-sizing: border-box;
+}
+
+.zext-container {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background: #f2f2f2;
+}
+
+.paper-sheet {
+    width: 100%;
+    max-width: 210mm;
+    min-height: 297mm;
+    background: white;
+    padding: 12mm 14mm;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    border: 1px solid #666;
+    direction: rtl;
+    position: relative;
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.meta-item {
+    font-size: 14px;
+    min-width: 0;
+}
+
+.center-title {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding: 0 12px 4px;
+    margin: 0 24px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.main-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sub-title {
+    font-size: 11px;
+    margin-top: -2px;
+}
+
+.paper-header {
+    border-bottom: 1px solid #444;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+}
+
+.zimni-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0 6px;
+    flex-wrap: wrap;
+}
+
+.zimni-select {
+    min-width: 190px;
+    max-width: 100%;
+    height: 28px;
+    border: 1px solid #777;
+    background: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    padding: 0 6px;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 18px;
+    position: relative;
+    margin-top: 6px;
+}
+
+.line-item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 4px;
+    font-size: 13px;
+    min-width: 0;
+}
+
+.lbl {
+    white-space: nowrap;
+    margin-left: 5px;
+    flex-shrink: 0;
+}
+
+.val {
+    font-weight: bold;
+    word-break: break-word;
+}
+
+.val.dotted {
+    border-bottom: 1px dotted #000;
+    flex: 1;
+    min-height: 14px;
+}
+
+.zimni-no {
+    font-size: 14px;
+}
+
+.bottom-crime {
+    text-align: right;
+    margin-top: auto;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #444;
+    margin-top: 8px;
+    table-layout: fixed;
+}
+
+.report-table th,
+.report-table td {
+    border: 1px solid #666;
+    padding: 4px 6px;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+.report-table th {
+    text-align: center;
+    background: #fdfdfd;
+    font-weight: bold;
+}
+
+.col-date {
+    width: 14%;
+}
+
+.col-sr {
+    width: 7%;
+}
+
+.col-details {
+    width: 79%;
+}
+
+.th-sub {
+    font-size: 10px;
+    font-weight: normal;
+    margin-top: 2px;
+    line-height: 1.2;
+}
+
+.td-date {
+    text-align: center;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.td-sr {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.row-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.row-label {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 10px;
+    white-space: nowrap;
+    min-width: 70px;
+    text-align: right;
+}
+
+.row-text {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 13px;
+}
+
+.sidebar-tools {
+    width: 68px;
+    background: white;
+    border-left: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 15px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.03);
+    flex-shrink: 0;
+}
+
+.size-select select {
+    width: 48px;
+    height: 26px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #f8f8f8;
+    font-size: 12px;
+    text-align: center;
+}
+
+.circle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    background: #1f86d7;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(31, 134, 215, 0.3);
+}
+
+.circle-btn:hover {
+    transform: scale(1.05);
+    background: #1a75bc;
+    box-shadow: 0 3px 6px rgba(31, 134, 215, 0.4);
+}
+
+.circle-btn img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.info {
+    background: #1f86d7;
+}
+
+.bottom {
+    margin-top: auto;
+    width: 100%;
+    padding: 0 8px;
+}
+
+.pill-btn {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border: none;
+    background: transparent;
+    color: #555;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.pill-btn:hover {
+    background: #f0f7fc;
+    color: #1f86d7;
+}
+
+.pill-btn img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.pill-btn:hover img {
+    opacity: 1;
+}
+
+.add {
+    color: #1f86d7;
+    font-weight: bold;
+}
+
+.add img {
+    filter: invert(41%) sepia(66%) saturate(3000%) hue-rotate(188deg) brightness(88%) contrast(88%);
+    opacity: 1;
+}
+
+/* Responsive Styles for Mobile */
+@media screen and (max-width: 768px) {
+    .zext-container {
+        flex-direction: column;
+    }
+
+    .scroll-area {
+        padding: 10px;
+        order: 2;
+    }
+
+    .paper-sheet {
+        padding: 8mm 10mm;
+        max-width: 100%;
+        min-height: auto;
+    }
+
+    .sidebar-tools {
+        width: 100%;
+        flex-direction: row;
+        padding: 10px;
+        border-left: none;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        order: 1;
+        overflow-x: auto;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    .tool-group {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .tool-group.bottom {
+        margin-top: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .circle-btn {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 0;
+    }
+
+    .pill-btn {
+        white-space: nowrap;
+        padding: 6px 8px;
+        margin-bottom: 0;
+        font-size: 11px;
+    }
+
+    .header-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .center-title {
+        margin: 8px 0;
+        width: 100%;
+    }
+
+    .header-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .meta-item {
+        font-size: 12px;
+    }
+
+    .main-title {
+        font-size: 16px;
+    }
+
+    .sub-title {
+        font-size: 10px;
+    }
+
+    .zimni-select {
+        min-width: 150px;
+        font-size: 12px;
+    }
+
+    .line-item {
+        font-size: 12px;
+    }
+
+    .report-table {
+        font-size: 11px;
+    }
+
+    .th-sub {
+        font-size: 9px;
+    }
+
+    .row-text {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .spacer {
+        display: none;
+    }
+}
+
+/* Tablet adjustments */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .paper-sheet {
+        max-width: 95%;
+    }
+
+    .scroll-area {
+        padding: 15px;
+    }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+    .paper-sheet {
+        padding: 5mm 8mm;
+    }
+
+    .main-title {
+        font-size: 14px;
+    }
+
+    .meta-item {
+        font-size: 11px;
+    }
+
+    .line-item {
+        font-size: 11px;
+    }
+
+    .report-table {
+        font-size: 10px;
+    }
+
+    .circle-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .circle-btn img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .pill-btn {
+        font-size: 10px;
+        padding: 5px 6px;
+    }
+
+    .pill-btn img {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media print {
+
+    .sidebar-tools,
+    .zext-container {
+        display: block;
+        height: auto;
+        overflow: visible;
+    }
+
+    .sidebar-tools {
+        display: none;
+    }
+
+    .scroll-area {
+        display: block;
+        padding: 0;
+        background: white;
+    }
+
+    .paper-sheet {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+}
